@@ -75,7 +75,7 @@
                             <div class="flex items-center mb-5 gap-x-5">
                                 <input type="submit" value="Login" class="bg-[#3bb77e] px-5 py-3 text-white font-semibold rounded-md hover:bg-yellow-500
                                 transition duration-500 ease-in-out cursor-pointer">
-                                <a href="#"></a>
+                                    <a href="#"></a>
                                 </input>
                                 <div class="flex items-center gap-x-1">
                                     <input class="w-6 h-6" type="checkbox">

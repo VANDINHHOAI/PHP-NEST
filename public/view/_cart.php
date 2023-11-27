@@ -90,32 +90,38 @@
                                         <span>Subtotal</span>
                                     </div>
                                 </div>
-        
+
+                                <?php foreach($cart as $item) : ?>
                                 <div class="bg-[#f4f6fa] md:bg-white md:flex items-center justify-around p-5">
                                     <div class="md:w-1/2 md:flex items-center gap-x-8">
-                                        <div class="p-2 md:p-0">
-                                            <button class="w-8 h-8 text-red-500 hover:bg-[#3bb77e] hover:text-white border border-[#3bb77e] rounded-full transition"><i class='bx bx-x'></i></button>
-                                        </div>
+                                        <form action="cart.php" method="post" class="p-2 md:p-0">
+                                            <input type="hidden" name="_method" value="delete">
+                                            <button class="w-8 h-8 text-red-500 hover:bg-[#3bb77e] hover:text-white border border-[#3bb77e] rounded-full transition">
+                                                <i class='bx bx-x'></i>
+                                            </button>
+                                        </form>
         
-                                        <div class="w-full md:w-auto border-t md:border-none p-2 md:p-0"><img class="w-20 h-20" src="./img/Products/product-1.jpg" alt=""></div>
+                                        <div class="w-full md:w-auto border-t md:border-none p-2 md:p-0">
+                                            <img class="w-20 h-20" src="./img/Products/<?php echo $item['productImage']?>" alt="">
+                                        </div>
         
                                         <div class="p-2 md:p-0 border-t md:border-none font-semibold">
                                             <h1 class="md:hidden text-[#253d4e] text-lg">Product</h1>
-                                            <span class="text-[#3bb77e]"><a href="#">Haagen Caramel Cone Ice Cream Boxed</a></span>
+                                            <span class="text-[#3bb77e]"><a href="#"><?php echo $item['productName']; ?></a></span>
                                         </div>
                                     </div>
                                     <div class="md:w-1/2 md:flex items-center text-[#7e7e7e]">
         
                                         <div class="p-2 md:p-0 border-t md:border-none">
                                             <h1 class="md:hidden text-[#253d4e] text-lg font-semibold">Price</h1>
-                                            <span class="md:ml-9">$22.85</span>
+                                            <span class="md:ml-9">$<?php echo $item['productPrice']; ?></span>
                                         </div>
         
                                         <div class="p-2 md:p-0 border-t md:border-none">
                                             <h1 class="md:hidden text-[#253d4e] text-lg font-semibold">Quantity</h1>
                                             <div class="bg-white inline-block px-2 md:ml-[78px] border-2 border-[#3bb77e] rounded-md overflow-hidden">
                                                 <div class="flex items-center ">
-                                                    <input type="text" class="w-12 h-auto outline-none border-none text-center text-[#3bb77e] font-semibold" id="inputField" value="1">
+                                                    <input type="text" class="w-12 h-auto outline-none border-none text-center text-[#3bb77e] font-semibold" id="inputField" value="<?php echo $item['quantity']; ?>">
                                                     <div class="flex flex-col text-lg text-[#3bb77e] font-semibold">
                                                         <button id="increaseBtn"><i class='bx bx-chevron-up'></i></button>
                                                         <button id="decreaseBtn"><i class='bx bx-chevron-down'></i></button>
@@ -126,10 +132,11 @@
                                         
                                         <div class="p-2 md:p-0 border-t md:border-none">
                                             <h1 class="md:hidden text-[#253d4e] text-lg font-semibold">Subtotal</h1>
-                                            <span class="md:ml-[70px]">$22.85</span>
+                                            <span class="md:ml-[70px]">$<?php echo $item['productPrice'] *  $item['quantity']; ?></span>
                                         </div>
                                     </div>
                                 </div>
+                                <?php endforeach ?>
         
                                 <div class="md:flex items-center justify-between bg-[#f4f6fa] md:bg-white mt-3 md:mt-0 px-5 py-[15px] border-t border-b">
                                     <div class="md:flex items-center gap-x-2">

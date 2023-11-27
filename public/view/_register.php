@@ -67,15 +67,18 @@
                 <div class="rgt-content">
                     <h2 class="rgt-content__title">Register</h2>
                     <form class="rgt-form" method="post" action="register.php">
+                        <i style="color: red;"><?php if(isset( $_SESSION['flash_message'])) echo  $_SESSION['flash_message']; unset( $_SESSION['flash_message']); ?></i>
                         <label for="email" class="rgt-form__lable-email">Email</label>
-                        <input id="email" type="text" class="rgt-form__input-email" placeholder="Your email">
+                        <input id="email" name="email" type="text" class="rgt-form__input-email" placeholder="Your email">
                         <label for="password" class="rgt-form__lable-password">Password</label>
-                        <input id="password" type="text" class="rgt-form__input-password" placeholder="Your password">
+                        <input id="password" name="password" type="text" class="rgt-form__input-password" placeholder="Your password">
                         <label for="cf-password" class="rgt-form__lable-cf-password">Confirm password</label>
-                        <input id="cf-password" type="text" class="rgt-form__input-cf-password" placeholder="Confirm your password">
+                        <input id="cf-password" name="c-password" type="text" class="rgt-form__input-cf-password" placeholder="Confirm your password">
 
                         <div class="rgt-form-action">
-                            <button class="rgt-btn"><a href="#">Register</a></button>
+                            <input type="submit" value="Register" class="rgt-btn">
+                                <a href=""></a>
+                            </input>
                             <span><a href="../public/login.html">You have an account?</a></span>
                         </div>
                     </form>

@@ -358,15 +358,15 @@
                         <?php foreach($productList as $product) {?>
                         <div class="group mt-5 md:mt-0 border rounded-md hover:border-green-500 hover:shadow hover:scale-[1.01]
                             transition duration-300 ease-in-out cursor-pointer relative">
-                            <a href="detail.php?imageProduct=<?php echo $product['image']; ?> &nameProduct=<?php echo $product['name']; ?>  &priceProduct=<?php echo $product['price']; ?>">
+                            <a href="detail.php?id=<?php echo $product['id'];?>">
                                 <div class="btn-more w-full px-6 pt-6">
-                                    <img class="product-img" src="./img/Products/<?php echo $product['image'] ?>" alt="">
+                                    <img class="product-img" src="./img/Products/<?php echo $product['image'] . ".jpg"?>" alt="">
                                 </div>
                             </a>
                             <div class="px-5 pb-5">
                                 <span class="text-xs text-[#adadad]">Baking material</span>
                                 <div class="text-[#253d4e] font-semibold hover:text-green-500">
-                                    <a class="product-name btn-more"><?php echo $product['name'] ?></a>
+                                    <a href="detail.php?id=<?php echo $product['id'];?>" class="product-name btn-more"><?php echo $product['name'] ?></a>
                                 </div>
                                 <div class="flex items-center text-[#adadad]">
                                     <i class='bx bx-star'></i>
