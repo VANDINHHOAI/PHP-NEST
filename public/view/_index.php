@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,13 +18,18 @@
     }
 
     .fade {
-      animation-name: fade;
-      animation-duration: 2s;
+        animation-name: fade;
+        animation-duration: 2s;
     }
 
     @keyframes fade {
-      from {opacity: .4} 
-      to {opacity: 1}
+        from {
+            opacity: .4
+        }
+
+        to {
+            opacity: 1
+        }
     }
 
     .modal-menu {
@@ -50,27 +56,26 @@
         }
     }
 
-    #toTop:active{
+    #toTop:active {
         transform: translateY(10px);
     }
 
     ::-webkit-scrollbar {
-      width: 8px;
+        width: 8px;
     }
 
     ::-webkit-scrollbar-track {
-      background: #f1f1f1;
+        background: #f1f1f1;
     }
 
     ::-webkit-scrollbar-thumb {
-      background: #3bb77e;
-      border-radius: 6px;
+        background: #3bb77e;
+        border-radius: 6px;
     }
 
     ::-webkit-scrollbar-thumb:hover {
-      background: #555;
+        background: #555;
     }
-
 </style>
 
 <body class="bg-white p-2 md:p-0">
@@ -84,20 +89,29 @@
             <div class="cart-title text-center text-3xl font-semibold text-[#253D76] mt-8">Your cart</div>
             <!-- CONTENT -->
             <div class="cart-content">
-                <div class="list-cart overflow-auto mt-5">
-                    <div class="flex items-center gap-x-5 p-2">
-                        <div class="img w-20 h-20"><img src="./img/Products/product-1.jpg" alt="product"></div>
-                        <div class="info text-[#253d4e]">
-                            <div class="product-name font-semibold">Foster Farms Takeout Crispy Classic</div>
-                            <div class="price mt-3">$22.05</div>
-                            <div class="flex items-center mt-3 gap-x-3">
-                                <button class="w-6 h-6 border hover:bg-green-500 rounded-full"><i class='bx bx-chevron-left'></i></button>
-                                <span class="quantity">1</span>
-                                <button class="w-6 h-6 border hover:bg-green-500 rounded-full"><i class='bx bx-chevron-right'></i></button>
+                <div class="list-cart overflow-hidden mt-5">
+                    <?php foreach ($_SESSION['cart'] as $item) { ?>
+                        <div class="flex items-center gap-x-5 p-2">
+                            <div class="img w-20 h-20"><img src="./img/Products/<?php echo $item['productImage']; ?>" alt="product"></div>
+                            <div class="info text-[#253d4e]">
+                                <div class="product-name font-semibold"><?php echo $item['productName'] ?></div>
+                                <div class="price mt-3">$<?php echo $item['productPrice'] ?></div>
+                                <div class="flex items-center mt-3 gap-x-3">
+                                    <button class="w-6 h-6 border hover:bg-green-500 rounded-full"><i class='bx bx-chevron-left'></i></button>
+                                    <span class="quantity">1</span>
+                                    <button class="w-6 h-6 border hover:bg-green-500 rounded-full"><i class='bx bx-chevron-right'></i></button>
+                                </div>
                             </div>
+
+                            <form action="index.php" method="post">
+                                <input type="hidden" name="_method" value="delete">
+                                <input type="hidden" name="productId" value="<?php echo $item['productId']; ?>">
+                                <div class="text-xl text-red-500">
+                                    <button><i class='bx bx-trash'></i></button>
+                                </div>
+                            </form>
                         </div>
-                        <div class="text-xl text-red-500"><button><i class='bx bx-trash' ></i></button></div>
-                    </div>
+                    <?php } ?>
                 </div>
             </div>
 
@@ -127,7 +141,7 @@
                             <div class="w-full h-auto mb-10 text-left">
                                 <h1 class="text-4xl md:text-7xl text-[#253d4e] font-semibold">Don't miss amazing<br>grocery deals</h1>
                             </div>
-                            <div class="mb-10 md:mb-16">                              
+                            <div class="mb-10 md:mb-16">
                                 <h1 class="text-3xl font-semibold text-[#7e7e7e]">Sign up for the daily newsletters</h1>
                             </div>
                             <div class="flex items-center">
@@ -140,7 +154,7 @@
                             <div class="w-full h-auto mb-10 text-left">
                                 <h1 class="text-4xl md:text-7xl text-[#253d4e] font-semibold">Fresh Vegetables<br>Big discount</h1>
                             </div>
-                            <div class="mb-10 md:mb-16">                              
+                            <div class="mb-10 md:mb-16">
                                 <h1 class="text-3xl font-semibold text-[#7e7e7e]">Save up to 50% on your first order</h1>
                             </div>
                             <div class="flex items-center">
@@ -168,7 +182,7 @@
                         </div>
                     </div>
                     <!-- Nav_categories -->
-                    <div class="w-auto mt-5 md:mt-0">   
+                    <div class="w-auto mt-5 md:mt-0">
                         <ul class="flex flex-wrap justify-center gap-x-8 gap-y-3 md:gap-y-0 text-sm md:text-xl">
                             <li class="hover:text-[#3bb77e]"><a href="#">Cake & milk</a></li>
                             <li class="hover:text-[#3bb77e]"><a href="#">Coffee & Teas</a></li>
@@ -184,7 +198,7 @@
                     <!-- Slider-container -->
                     <div class="w-full overflow-hidden">
                         <div class="flex w-full gap-x-5">
-                            <div class="group flex-1 py-5 px-3 bg-[#f2fce4] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
+                            <div class="group flex-1 py-5 bg-[#f2fce4] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
                                 <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="./img/Feature_categories-img/cat-1.png" alt="Categories">
 
                                 <div class="text-center flex flex-col">
@@ -192,87 +206,87 @@
                                     <span class="text-[#7e7e7e]">11 items</span>
                                 </div>
                             </div>
-                            
-                            <div class="group flex-1 py-5 px-3 bg-[#fffceb] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
+
+                            <div class="group flex-1 py-5 bg-[#fffceb] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
                                 <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="./img/Feature_categories-img/cat-2.png" alt="Categories">
 
                                 <div class="text-center flex flex-col">
-                                    <span class="text-[#253d4e] group-hover:text-[#3bb77e] font-semibold">Cake & Milk</span>
-                                    <span class="text-[#7e7e7e]">11 items</span>
+                                    <span class="text-[#253d4e] group-hover:text-[#3bb77e] font-semibold">Oganic Kiwi</span>
+                                    <span class="text-[#7e7e7e]">6 items</span>
                                 </div>
-                            </div> 
+                            </div>
 
-                            <div class="group flex-1 py-5 px-3 bg-[#ecffec] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
+                            <div class="group flex-1 py-5 bg-[#ecffec] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
                                 <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="./img/Feature_categories-img/cat-3.png" alt="Categories">
 
                                 <div class="text-center flex flex-col">
-                                    <span class="text-[#253d4e] group-hover:text-[#3bb77e] font-semibold">Cake & Milk</span>
-                                    <span class="text-[#7e7e7e]">11 items</span>
+                                    <span class="text-[#253d4e] group-hover:text-[#3bb77e] font-semibold">Peach</span>
+                                    <span class="text-[#7e7e7e]">6 items</span>
                                 </div>
-                            </div> 
+                            </div>
 
-                            <div class="group flex-1 py-5 px-3 bg-[#feefea] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
+                            <div class="group flex-1 py-5 bg-[#feefea] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
                                 <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="./img/Feature_categories-img/cat-4.png" alt="Categories">
 
                                 <div class="text-center flex flex-col">
-                                    <span class="text-[#253d4e] group-hover:text-[#3bb77e] font-semibold">Cake & Milk</span>
-                                    <span class="text-[#7e7e7e]">11 items</span>
+                                    <span class="text-[#253d4e] group-hover:text-[#3bb77e] font-semibold">Read Apple</span>
+                                    <span class="text-[#7e7e7e]">10 items</span>
                                 </div>
-                            </div> 
+                            </div>
 
-                            <div class="group flex-1 py-5 px-3 bg-[#fff3eb] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
+                            <div class="group flex-1 py-5 bg-[#fff3eb] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
                                 <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="./img/Feature_categories-img/cat-5.png" alt="Categories">
 
                                 <div class="text-center flex flex-col">
-                                    <span class="text-[#253d4e] group-hover:text-[#3bb77e] font-semibold">Cake & Milk</span>
+                                    <span class="text-[#253d4e] group-hover:text-[#3bb77e] font-semibold">Snacks</span>
                                     <span class="text-[#7e7e7e]">11 items</span>
                                 </div>
-                            </div> 
+                            </div>
 
-                            <div class="group flex-1 py-5 px-3 bg-[#fff3ff] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
+                            <div class="group flex-1 py-5 bg-[#fff3ff] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
                                 <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="./img/Feature_categories-img/cat-6.png" alt="Categories">
 
                                 <div class="text-center flex flex-col">
-                                    <span class="text-[#253d4e] group-hover:text-[#3bb77e] font-semibold">Cake & Milk</span>
-                                    <span class="text-[#7e7e7e]">11 items</span>
+                                    <span class="text-[#253d4e] group-hover:text-[#3bb77e] font-semibold">Vegetables</span>
+                                    <span class="text-[#7e7e7e]">6 items</span>
                                 </div>
-                            </div> 
+                            </div>
 
-                            <div class="group flex-1 py-5 px-3 bg-[#f2fce4] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
+                            <div class="group flex-1 py-5 bg-[#f2fce4] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
                                 <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="./img/Feature_categories-img/cat-7.png" alt="Categories">
 
                                 <div class="text-center flex flex-col">
-                                    <span class="text-[#253d4e] group-hover:text-[#3bb77e] font-semibold">Cake & Milk</span>
+                                    <span class="text-[#253d4e] group-hover:text-[#3bb77e] font-semibold">Strawberry</span>
                                     <span class="text-[#7e7e7e]">11 items</span>
                                 </div>
-                            </div> 
+                            </div>
 
-                            <div class="group flex-1 py-5 px-3 bg-[#feefea] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
+                            <div class="group flex-1 py-5 bg-[#feefea] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
                                 <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="./img/Feature_categories-img/cat-8.png" alt="Categories">
 
                                 <div class="text-center flex flex-col">
-                                    <span class="text-[#253d4e] group-hover:text-[#3bb77e] font-semibold">Cake & Milk</span>
-                                    <span class="text-[#7e7e7e]">11 items</span>
+                                    <span class="text-[#253d4e] group-hover:text-[#3bb77e] font-semibold">Black plum</span>
+                                    <span class="text-[#7e7e7e]">10 items</span>
                                 </div>
-                            </div> 
+                            </div>
 
-                            <div class="group flex-1 py-5 px-3 bg-[#f2fce4] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
+                            <div class="group flex-1 py-5 bg-[#f2fce4] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
                                 <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="./img/Feature_categories-img/cat-9.png" alt="Categories">
 
                                 <div class="text-center flex flex-col">
-                                    <span class="text-[#253d4e] group-hover:text-[#3bb77e] font-semibold">Cake & Milk</span>
-                                    <span class="text-[#7e7e7e]">11 items</span>
+                                    <span class="text-[#253d4e] group-hover:text-[#3bb77e] font-semibold">Custard apple</span>
+                                    <span class="text-[#7e7e7e]">10 items</span>
                                 </div>
-                            </div> 
+                            </div>
 
-                            <div class="group flex-1 py-5 px-3 bg-[#feefea] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
+                            <div class="group flex-1 py-5 bg-[#feefea] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
                                 <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="./img/Feature_categories-img/cat-10.png" alt="Categories">
 
                                 <div class="text-center flex flex-col">
-                                    <span class="text-[#253d4e] group-hover:text-[#3bb77e] font-semibold">Cake & Milk</span>
+                                    <span class="text-[#253d4e] group-hover:text-[#3bb77e] font-semibold">Coffee & Tea</span>
                                     <span class="text-[#7e7e7e]">11 items</span>
                                 </div>
-                            </div> 
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -327,27 +341,35 @@
             <div class="mt-9">
                 <div class="md:px-[10px]">
                     <div class="block md:flex items-center justify-between">
-                        <div class="text-4xl text-[#253d4e] font-semibold"><h1>Popular Products</h1></div>
+                        <div class="text-4xl text-[#253d4e] font-semibold">
+                            <h1>Popular Products</h1>
+                        </div>
                         <div class="mt-5 md:mt-0 text-base text-[#253d4e] font-semibold ">
                             <ul class="flex flex-wrap items-center justify-center gap-x-8 gap-y-2">
                                 <li class="hover:text-green-500 hover:-translate-y-1
                                 transition-all duration-300 ease-in-out">
-                                    <a href="#">All</a></li>
+                                    <a href="#">All</a>
+                                </li>
                                 <li class="hover:text-green-500 hover:-translate-y-1
                                 transition-all duration-300 ease-in-out">
-                                    <a href="#">Barking material</a></li>
+                                    <a href="#">Barking material</a>
+                                </li>
                                 <li class="hover:text-green-500 hover:-translate-y-1
                                 transition-all duration-300 ease-in-out">
-                                    <a href="#">Fresh Fruits</a></li>
+                                    <a href="#">Fresh Fruits</a>
+                                </li>
                                 <li class="hover:text-green-500 hover:-translate-y-1
                                 transition-all duration-300 ease-in-out">
-                                    <a href="#">Milk</a></li>
+                                    <a href="#">Milk</a>
+                                </li>
                                 <li class="hover:text-green-500 hover:-translate-y-1
                                 transition-all duration-300 ease-in-out">
-                                    <a href="#">Meats</a></li>
+                                    <a href="#">Meats</a>
+                                </li>
                                 <li class="hover:text-green-500 hover:-translate-y-1
                                 transition-all duration-300 ease-in-out">
-                                    <a href="#">Vegetables</a></li>
+                                    <a href="#">Vegetables</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -355,53 +377,61 @@
                     <!-- Products -->
                     <!-- Container -->
                     <div class="grid grid-cols-1 sm:grid-cols-2  md:grid-cols-5 gap-3 md:gap-6 mt-5">
-                        <?php foreach($productList as $product) {?>
-                        <div class="group mt-5 md:mt-0 border rounded-md hover:border-green-500 hover:shadow hover:scale-[1.01]
+                        <?php foreach ($productList as $product) { ?>
+                            <div class="group mt-5 md:mt-0 border rounded-md hover:border-green-500 hover:shadow hover:scale-[1.01]
                             transition duration-300 ease-in-out cursor-pointer relative">
-                            <a href="detail.php?id=<?php echo $product['id'];?>">
-                                <div class="btn-more w-full px-6 pt-6">
-                                    <img class="product-img" src="./img/Products/<?php echo $product['image'] . ".jpg"?>" alt="">
-                                </div>
-                            </a>
-                            <div class="px-5 pb-5">
-                                <span class="text-xs text-[#adadad]">Baking material</span>
-                                <div class="text-[#253d4e] font-semibold hover:text-green-500">
-                                    <a href="detail.php?id=<?php echo $product['id'];?>" class="product-name btn-more"><?php echo $product['name'] ?></a>
-                                </div>
-                                <div class="flex items-center text-[#adadad]">
-                                    <i class='bx bx-star'></i>
-                                    <i class='bx bx-star'></i>
-                                    <i class='bx bx-star'></i>
-                                    <i class='bx bx-star'></i>
-                                    <i class='bx bx-star'></i>
-                                    <span class="ml-2">0</span>
-                                </div>
-                                <div>
-                                    <span class="text-[#adadad]">By</span>
-                                    <a href="#" class="text-green-500 hover:text-red-500">
-                                        Country Crock
-                                    </a>
-                                </div>
-                                <div class="md:flex justify-between items-center mt-3">
-                                    <div>
-                                        <span class="text-green-500 product-price">$<?php echo $product['price'] ?></span>
-                                        <span class="text-[#adadad] text-xs">$19.80</span>
+                                <a href="detail.php?id=<?php echo $product['id']; ?>">
+                                    <div class="btn-more w-full px-6 pt-6">
+                                        <img class="product-img" src="./img/Products/<?php echo $product['image'] . ".jpg"?>" alt="">
                                     </div>
-                                    <button class="mt-2 md:mt-0 w-full md:w-auto bg-[#def9ec] text-[#29a56c] font-semibold px-3 py-[6px] rounded
-                                    hover:bg-green-500 hover:text-white" onclick="(<?php echo $product['image'];?>)">
-                                       <i class='bx bx-cart'></i>
-                                       Add
-                                    </button>
+                                </a>
+                                <div class="px-5 pb-5">
+                                    <span class="text-xs text-[#adadad]">Baking material</span>
+                                    <div class="text-[#253d4e] font-semibold hover:text-green-500">
+                                        <a href="detail.php?id=<?php echo $product['id']; ?>" class="product-name btn-more"><?php echo $product['name'] ?></a>
+                                    </div>
+                                    <div class="flex items-center text-[#adadad]">
+                                        <i class='bx bx-star'></i>
+                                        <i class='bx bx-star'></i>
+                                        <i class='bx bx-star'></i>
+                                        <i class='bx bx-star'></i>
+                                        <i class='bx bx-star'></i>
+                                        <span class="ml-2">0</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-[#adadad]">By</span>
+                                        <a href="#" class="text-green-500 hover:text-red-500">
+                                            Country Crock
+                                        </a>
+                                    </div>
+                                    <div class="md:flex justify-between items-center mt-3">
+                                        <div>
+                                            <span class="text-green-500 product-price">$<?php echo $product['price'];?></span>
+                                            <span class="text-[#adadad] text-xs">$19.80</span>
+                                        </div>
+                                        <form action="cart.php" method="post">
+                                            <input type="hidden" name="_method" value="create">
+                                            <input type="hidden" name="productId" value="<?php echo $product['id']; ?>">
+                                            <input type="hidden" name="productName" value="<?php echo $product['name']; ?>">
+                                            <input type="hidden" name="productImage" value="<?php echo $product['image']; ?>.jpg">
+                                            <input type="hidden" name="productPrice" value="<?php echo $product['price']; ?>">
+                                            <input type="hidden" name="quantity" value="1">
+                                            <button class="mt-2 md:mt-0 w-full md:w-auto bg-[#def9ec] text-[#29a56c] font-semibold px-3 py-[6px] rounded
+                                         hover:bg-green-500 hover:text-white">
+                                                <i class='bx bx-cart'></i>
+                                                Add
+                                            </button>
+                                        </form>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="group-hover:block hidden absolute top-0 right-0">
-                                <div class="text-2xl text-green-500 border border-green-500 rounded hover:bg-green-500 hover:text-white">
-                                    <a href="#"><i class='bx bx-heart'></i></a>
+                                <div class="group-hover:block hidden absolute top-0 right-0">
+                                    <div class="text-2xl text-green-500 border border-green-500 rounded hover:bg-green-500 hover:text-white">
+                                        <a href="#"><i class='bx bx-heart'></i></a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <?php }?>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
@@ -411,27 +441,35 @@
             <div class="mt-9">
                 <div class="md:px-[10px]">
                     <div class="block md:flex items-center justify-between">
-                        <div class="text-4xl text-[#253d4e] font-semibold"><h1>Daily Best Sells</h1></div>
+                        <div class="text-4xl text-[#253d4e] font-semibold">
+                            <h1>Daily Best Sells</h1>
+                        </div>
                         <div class="mt-5 md:mt-0 text-base text-[#253d4e] font-semibold ">
                             <ul class="flex flex-wrap items-center justify-center gap-x-8 gap-y-2">
                                 <li class="hover:text-green-500 hover:-translate-y-1
                                 transition-all duration-300 ease-in-out">
-                                    <a href="#">All</a></li>
+                                    <a href="#">All</a>
+                                </li>
                                 <li class="hover:text-green-500 hover:-translate-y-1
                                 transition-all duration-300 ease-in-out">
-                                    <a href="#">Deals Of The Day</a></li>
+                                    <a href="#">Deals Of The Day</a>
+                                </li>
                                 <li class="hover:text-green-500 hover:-translate-y-1
                                 transition-all duration-300 ease-in-out">
-                                    <a href="#">Beauty</a></li>
+                                    <a href="#">Beauty</a>
+                                </li>
                                 <li class="hover:text-green-500 hover:-translate-y-1
                                 transition-all duration-300 ease-in-out">
-                                    <a href="#">Bread & Juice</a></li>
+                                    <a href="#">Bread & Juice</a>
+                                </li>
                                 <li class="hover:text-green-500 hover:-translate-y-1
                                 transition-all duration-300 ease-in-out">
-                                    <a href="#">Drinks</a></li>
+                                    <a href="#">Drinks</a>
+                                </li>
                                 <li class="hover:text-green-500 hover:-translate-y-1
                                 transition-all duration-300 ease-in-out">
-                                    <a href="#">Milks</a></li>
+                                    <a href="#">Milks</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -443,57 +481,57 @@
                                 <h1 class="text-3xl font-semibold text-[#253d4e]">Bring natute into your home</h1>
                                 <button class="flex items-center mt-5 text-white font-semibold bg-green-500 px-5 py-2 rounded-md">
                                     <a href="#">Shop now</a>
-                                    <i class='bx bx-right-arrow-alt' ></i>
+                                    <i class='bx bx-right-arrow-alt'></i>
                                 </button>
                             </div>
                         </div>
-                        
-                        <?php for($i = 0; $i < 4; $i++) {?>
-                        <div class="group mt-5 md:mt-0 border rounded-md hover:border-green-500 hover:shadow hover:scale-[1.01]
+
+                        <?php for ($i = 0; $i < 4; $i++) { ?>
+                            <div class="group mt-5 md:mt-0 border rounded-md hover:border-green-500 hover:shadow hover:scale-[1.01]
                         transition duration-300 ease-in-out cursor-pointer relative">
-                            <a href="detail.php?imageProduct=<?php echo $productList[$i]['image']; ?> &nameProduct=<?php echo $productList[$i]['name']; ?>  &priceProduct=<?php echo $productList[$i]['price']; ?>">    
-                                <div class="w-full px-6 pt-6">
-                                    <img src="./img/Products/<?php echo $productList[$i]['image'] ?>" alt="">
-                                </div>
-                            </a>
-                            <div class="px-5 pb-5">
-                                <span class="text-xs text-[#adadad]">Baking material</span>
-                                <div class="text-sm md:text-base text-[#253d4e] font-semibold hover:text-green-500">
-                                    <a href="#"><?php echo $productList[$i]['name'] ?></a>
-                                </div>
-                                <div class="flex items-center text-[#adadad]">
-                                    <i class='bx bx-star'></i>
-                                    <i class='bx bx-star'></i>
-                                    <i class='bx bx-star'></i>
-                                    <i class='bx bx-star'></i>
-                                    <i class='bx bx-star'></i>
-                                    <span class="ml-2">0</span>
-                                </div>
-                                <div>
-                                    <span class="text-[#adadad]">By</span>
-                                    <a href="#" class="text-green-500 hover:text-red-500">
-                                        Country Crock
-                                    </a>
-                                </div>
-                                <div class="md:flex justify-between items-center mt-3">
-                                    <div>
-                                        <span class="text-green-500">$<?php echo $productList[$i]['price'] ?></span>
-                                        <span class="text-[#adadad] text-xs">$19.80</span>
+                                <a href="detail.php?imageProduct=<?php echo $productList[$i]['image'] . ".jpg"?> &nameProduct=<?php echo $productList[$i]['name']; ?>  &priceProduct=<?php echo $productList[$i]['price']; ?>">
+                                    <div class="w-full px-6 pt-6">
+                                        <img src="./img/Products/<?php echo $productList[$i]['image'] . ".jpg"?>" alt="">
                                     </div>
-                                    <button class="mt-2 md:mt-0 w-full md:w-auto bg-[#def9ec] text-[#29a56c] font-semibold px-3 py-[6px] rounded
+                                </a>
+                                <div class="px-5 pb-5">
+                                    <span class="text-xs text-[#adadad]">Baking material</span>
+                                    <div class="text-sm md:text-base text-[#253d4e] font-semibold hover:text-green-500">
+                                        <a href="#"><?php echo $productList[$i]['name'] ?></a>
+                                    </div>
+                                    <div class="flex items-center text-[#adadad]">
+                                        <i class='bx bx-star'></i>
+                                        <i class='bx bx-star'></i>
+                                        <i class='bx bx-star'></i>
+                                        <i class='bx bx-star'></i>
+                                        <i class='bx bx-star'></i>
+                                        <span class="ml-2">0</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-[#adadad]">By</span>
+                                        <a href="#" class="text-green-500 hover:text-red-500">
+                                            Country Crock
+                                        </a>
+                                    </div>
+                                    <div class="md:flex justify-between items-center mt-3">
+                                        <div>
+                                            <span class="text-green-500">$<?php echo $productList[$i]['price'] ?></span>
+                                            <span class="text-[#adadad] text-xs">$19.80</span>
+                                        </div>
+                                        <button class="mt-2 md:mt-0 w-full md:w-auto bg-[#def9ec] text-[#29a56c] font-semibold px-3 py-[6px] rounded
                                     hover:bg-green-500 hover:text-white">
-                                        <i class='bx bx-cart'></i>
-                                        Add
-                                    </button>
-                                </div>
-                                <div class="group-hover:block hidden absolute top-0 right-0">
-                                    <div class="text-2xl text-green-500 border border-green-500 rounded hover:bg-green-500 hover:text-white">
-                                        <a href="#"><i class='bx bx-heart'></i></a>
+                                            <i class='bx bx-cart'></i>
+                                            Add
+                                        </button>
+                                    </div>
+                                    <div class="group-hover:block hidden absolute top-0 right-0">
+                                        <div class="text-2xl text-green-500 border border-green-500 rounded hover:bg-green-500 hover:text-white">
+                                            <a href="#"><i class='bx bx-heart'></i></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <?php }?>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
@@ -501,7 +539,9 @@
             <!-- ===Section Deals Of The Day=== -->
             <!-- Container -->
             <div class="mt-9 px-0 md:px-[10px]">
-                <div class="text-4xl text-[#253d4e] font-semibold"><h1>Deal Of The Day</h1></div>
+                <div class="text-4xl text-[#253d4e] font-semibold">
+                    <h1>Deal Of The Day</h1>
+                </div>
                 <div class="md:flex grid grid-cols-2 gap-y-5 gap-x-2 md:gap-x-6 mt-5">
                     <div class="group flex-1 relative h-[320px]">
                         <img class="rounded-lg" src="./img/banner/DOTD_1.png" alt="">
@@ -510,7 +550,7 @@
                             <span class="text-[#253d4e] text-sm md:text-lg h-[55px] font-semibold hover:text-green-500">
                                 <a href="#">Organic Cage Grade A Large Eggs</a>
                             </span>
-                            <span class="text-[#b6b6b6] text-xs mt-2">By 
+                            <span class="text-[#b6b6b6] text-xs mt-2">By
                                 <span class="text-green-500 hover:text-red-500">
                                     <a href="#">Hambger Hel</a>
                                 </span>
@@ -522,7 +562,7 @@
                                 </div>
                                 <button class="w-full md:w-auto bg-[#def9ec] text-lg text-green-500 px-6 py-2 md:py-1 font-semibold mt-2 md:mt-0
                                 hover:text-white hover:bg-green-500 rounded">
-                                    <a href="#"><i class='bx bx-cart mr-1' ></i>Add</a>
+                                    <a href="#"><i class='bx bx-cart mr-1'></i>Add</a>
                                 </button>
                             </div>
                         </div>
@@ -535,7 +575,7 @@
                             <span class="text-[#253d4e] text-sm md:text-lg h-[55px] font-semibold hover:text-green-500">
                                 <a href="#">Naturally Flavored Cinnamon Vanilla Var</a>
                             </span>
-                            <span class="text-[#b6b6b6] text-xs mt-2">By 
+                            <span class="text-[#b6b6b6] text-xs mt-2">By
                                 <span class="text-green-500 hover:text-red-500">
                                     <a href="#">Hambger Hel</a>
                                 </span>
@@ -547,7 +587,7 @@
                                 </div>
                                 <button class="w-full md:w-auto bg-[#def9ec] text-lg text-green-500 px-6 py-2 md:py-1 font-semibold mt-2 md:mt-0
                                 hover:text-white hover:bg-green-500 rounded">
-                                    <a href="#"><i class='bx bx-cart mr-1' ></i>Add</a>
+                                    <a href="#"><i class='bx bx-cart mr-1'></i>Add</a>
                                 </button>
                             </div>
                         </div>
@@ -560,7 +600,7 @@
                             <span class="text-[#253d4e] text-sm md:text-lg h-[55px] font-semibold hover:text-green-500">
                                 <a href="#">Seeds of Change Organic Watermelon</a>
                             </span>
-                            <span class="text-[#b6b6b6] text-xs mt-2">By 
+                            <span class="text-[#b6b6b6] text-xs mt-2">By
                                 <span class="text-green-500 hover:text-red-500">
                                     <a href="#">Hambger Hel</a>
                                 </span>
@@ -572,7 +612,7 @@
                                 </div>
                                 <button class="w-full md:w-auto bg-[#def9ec] text-lg text-green-500 px-6 py-2 md:py-1 font-semibold mt-2 md:mt-0
                                 hover:text-white hover:bg-green-500 rounded">
-                                    <a href="#"><i class='bx bx-cart mr-1' ></i>Add</a>
+                                    <a href="#"><i class='bx bx-cart mr-1'></i>Add</a>
                                 </button>
                             </div>
                         </div>
@@ -585,7 +625,7 @@
                             <span class="text-[#253d4e] text-sm md:text-lg h-[55px] font-semibold hover:text-green-500">
                                 <a href="#">Dried fruit: apricots, figs, prunes</a>
                             </span>
-                            <span class="text-[#b6b6b6] text-xs mt-2">By 
+                            <span class="text-[#b6b6b6] text-xs mt-2">By
                                 <span class="text-green-500 hover:text-red-500">
                                     <a href="#">Hambger Hel</a>
                                 </span>
@@ -597,7 +637,7 @@
                                 </div>
                                 <button class="w-full md:w-auto bg-[#def9ec] text-lg text-green-500 px-6 py-2 md:py-1 font-semibold mt-2 md:mt-0
                                 hover:text-white hover:bg-green-500 rounded">
-                                    <a href="#"><i class='bx bx-cart mr-1' ></i>Add</a>
+                                    <a href="#"><i class='bx bx-cart mr-1'></i>Add</a>
                                 </button>
                             </div>
                         </div>
@@ -628,7 +668,7 @@
                                         <div class="text-[#253d4e] font-semibold hover:text-green-500">
                                             <a href="#">Haagen Caramel Cone Ice Cream Boxed</a>
                                         </div>
-                                        
+
                                         <div class="flex items-center text-[#7e7e7e]">
                                             <i class='bx bxs-star text-yellow-500'></i>
                                             <i class='bx bxs-star text-yellow-500'></i>
@@ -658,7 +698,7 @@
                                         <div class="text-[#253d4e] font-semibold hover:text-green-500">
                                             <a href="#">Seeds of Change Organic Red Rice</a>
                                         </div>
-                                        
+
                                         <div class="flex items-center text-[#7e7e7e]">
                                             <i class='bx bxs-star text-yellow-500'></i>
                                             <i class='bx bxs-star text-yellow-500'></i>
@@ -688,7 +728,7 @@
                                         <div class="text-[#253d4e] font-semibold hover:text-green-500">
                                             <a href="#">Blue Almonds Lightly Salted Vegetables</a>
                                         </div>
-                                        
+
                                         <div class="flex items-center text-[#7e7e7e]">
                                             <i class='bx bxs-star text-yellow-500'></i>
                                             <i class='bx bxs-star text-yellow-500'></i>
@@ -729,7 +769,7 @@
                                         <div class="text-[#253d4e] font-semibold hover:text-green-500">
                                             <a href="#">Haagen Caramel Cone Ice Cream Boxed</a>
                                         </div>
-                                        
+
                                         <div class="flex items-center text-[#7e7e7e]">
                                             <i class='bx bxs-star text-yellow-500'></i>
                                             <i class='bx bxs-star text-yellow-500'></i>
@@ -759,7 +799,7 @@
                                         <div class="text-[#253d4e] font-semibold hover:text-green-500">
                                             <a href="#">Haagen Caramel Cone Ice Cream Boxed</a>
                                         </div>
-                                        
+
                                         <div class="flex items-center text-[#7e7e7e]">
                                             <i class='bx bxs-star text-yellow-500'></i>
                                             <i class='bx bxs-star text-yellow-500'></i>
@@ -789,7 +829,7 @@
                                         <div class="text-[#253d4e] font-semibold hover:text-green-500">
                                             <a href="#">Haagen Caramel Cone Ice Cream Boxed</a>
                                         </div>
-                                        
+
                                         <div class="flex items-center text-[#7e7e7e]">
                                             <i class='bx bxs-star text-yellow-500'></i>
                                             <i class='bx bxs-star text-yellow-500'></i>
@@ -830,7 +870,7 @@
                                         <div class="text-[#253d4e] font-semibold hover:text-green-500">
                                             <a href="#">Haagen Caramel Cone Ice Cream Boxed</a>
                                         </div>
-                                        
+
                                         <div class="flex items-center text-[#7e7e7e]">
                                             <i class='bx bxs-star text-yellow-500'></i>
                                             <i class='bx bxs-star text-yellow-500'></i>
@@ -860,7 +900,7 @@
                                         <div class="text-[#253d4e] font-semibold hover:text-green-500">
                                             <a href="#">Haagen Caramel Cone Ice Cream Boxed</a>
                                         </div>
-                                        
+
                                         <div class="flex items-center text-[#7e7e7e]">
                                             <i class='bx bxs-star text-yellow-500'></i>
                                             <i class='bx bxs-star text-yellow-500'></i>
@@ -890,7 +930,7 @@
                                         <div class="text-[#253d4e] font-semibold hover:text-green-500">
                                             <a href="#">Haagen Caramel Cone Ice Cream Boxed</a>
                                         </div>
-                                        
+
                                         <div class="flex items-center text-[#7e7e7e]">
                                             <i class='bx bxs-star text-yellow-500'></i>
                                             <i class='bx bxs-star text-yellow-500'></i>
@@ -931,7 +971,7 @@
                                         <div class="text-[#253d4e] font-semibold hover:text-green-500">
                                             <a href="#">Haagen Caramel Cone Ice Cream Boxed</a>
                                         </div>
-                                        
+
                                         <div class="flex items-center text-[#7e7e7e]">
                                             <i class='bx bxs-star text-yellow-500'></i>
                                             <i class='bx bxs-star text-yellow-500'></i>
@@ -961,7 +1001,7 @@
                                         <div class="text-[#253d4e] font-semibold hover:text-green-500">
                                             <a href="#">Haagen Caramel Cone Ice Cream Boxed</a>
                                         </div>
-                                        
+
                                         <div class="flex items-center text-[#7e7e7e]">
                                             <i class='bx bxs-star text-yellow-500'></i>
                                             <i class='bx bxs-star text-yellow-500'></i>
@@ -991,7 +1031,7 @@
                                         <div class="text-[#253d4e] font-semibold hover:text-green-500">
                                             <a href="#">Haagen Caramel Cone Ice Cream Boxed</a>
                                         </div>
-                                        
+
                                         <div class="flex items-center text-[#7e7e7e]">
                                             <i class='bx bxs-star text-yellow-500'></i>
                                             <i class='bx bxs-star text-yellow-500'></i>
@@ -1032,14 +1072,14 @@
             <div>
                 <div class="modal-container js-modal-container w-[90%] bg-white px-5">
                     <div class="py-2 bg-transparent text-2xl border-b">
-                        <button class="js-modal-close"><a href="#"><i class='bx bx-x'></i></a></button>                        
+                        <button class="js-modal-close"><a href="#"><i class='bx bx-x'></i></a></button>
                     </div>
 
                     <div class="flex justify-center flex-col py-5 bg-transparent">
                         <div class="flex items-center justify-between w-full h-8 bg-blue-300 shadow rounded">
                             <input class="bg-transparent w-full h-full border-none outline-none px-3" type="text" placeholder="Search...">
                             <div class="flex items-center bg-transparent h-full text-2xl">
-                                <i class='bx bx-search-alt-2' ></i>
+                                <i class='bx bx-search-alt-2'></i>
                             </div>
                         </div>
                     </div>
@@ -1088,8 +1128,8 @@
                         </div>
 
                         <div class="w-full p-5 border rounded-lg">
-                            <div><i class='bx bx-headphone text-green-500 mr-1' ></i><span>0123456789</span></div>
-                            <div><i class='bx bx-envelope only text-green-500 mr-1' ></i><span>0123456789</span></div>
+                            <div><i class='bx bx-headphone text-green-500 mr-1'></i><span>0123456789</span></div>
+                            <div><i class='bx bx-envelope only text-green-500 mr-1'></i><span>0123456789</span></div>
                             <div class="w-full bg-orange-400 text-center mt-3 py-3 text-white font-semibold rounded-lg">
                                 <a href="login.html">Sign up</a>
                             </div>
@@ -1102,9 +1142,9 @@
                             <ul class="w-full flex items-center justify-center gap-x-2 text-3xl text-green-500">
                                 <li><i class='bx bxl-facebook'></i></li>
                                 <li><i class='bx bxl-twitter'></i></li>
-                                <li><i class='bx bxl-skype' ></i></li>
-                                <li><i class='bx bxl-youtube' ></i></li>
-                                <li><i class='bx bxl-instagram-alt' ></i></li>
+                                <li><i class='bx bxl-skype'></i></li>
+                                <li><i class='bx bxl-youtube'></i></li>
+                                <li><i class='bx bxl-instagram-alt'></i></li>
                             </ul>
                         </div>
 
@@ -1118,4 +1158,5 @@
     </div>
     <script src="./js/main.js"></script>
 </body>
+
 </html>

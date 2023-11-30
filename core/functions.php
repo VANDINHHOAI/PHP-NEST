@@ -31,14 +31,14 @@ function add_to_cart( $product_id, $quantity = 1 )
     }
 }
 
-function delete_from_cart( $product_id )
+function delete($productId )
 {
     $cart = $_SESSION['cart'];
     $rs = array();
 
-    foreach (  $cart as $order_detail ) {
-        if ($order_detail['product_id'] != $product_id) {
-            array_push($rs, $order_detail);
+    foreach (  $cart as $item ) {
+        if ($item['product_id'] != $productId) {
+            array_push($rs, $item);
         }
     }
 
@@ -85,9 +85,9 @@ function check_product_exist($product_id)
     return $is_exist;
 }
 
-function total_cart_item( $price, $quantity ){
-    return number_format( $price * $quantity, 0, '', ',');
-}
+// function total_cart_item( $price, $quantity ){
+//     return number_format( $price * $quantity, 0, '', ',');
+// }
 
 function total_cart(){
     $cart = $_SESSION['cart'];

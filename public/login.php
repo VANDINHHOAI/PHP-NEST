@@ -15,16 +15,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if ($isLoginSuccess) {
-        header('Location: index.php');
+        if(isset($_SESSION['user']) && $_SESSION['isCheckOut']) {
+            header('Location: check_out.php');
+        }else{
+            header('Location: index.php');
+        }
     }else {
         header('Location: login.php');
     }
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    if (isset($_SESSION['user']))
+    if (isset($_SESSION['user'])) {
         header('Location: index.php');  
-
-    include_once './view/_login.php';
+    }else { 
+        include_once './view/_login.php';
+    }
 }
 ?>

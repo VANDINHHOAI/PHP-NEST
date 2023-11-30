@@ -42,7 +42,7 @@ function create(){
          */
         for($i = 0; $i < count($cart); $i++){
             if($cart[$i]['productId'] == $_POST['productId']){
-                $cart[$i]['quantity'] = $cart[$i]['quantity'] + 1;
+                $cart[$i]['quantity'] = $cart[$i]['quantity'] +  1;
                 $isEmpty = false;
                 break;
             }
@@ -70,9 +70,9 @@ function delete(){
     $cart = $_SESSION['cart'];
     $rs = array();
 
-    foreach($cart as $item){ 
+    foreach($cart as $item){
         if($item['productId'] != $_POST['productId']){
-            array_push($rs, $item);  
+            array_push($rs, $item);
         }
     }
 
@@ -81,5 +81,14 @@ function delete(){
 
 function update(){
 
+}
+
+function total_cart(){
+    $cart = $_SESSION['cart'];
+    $total = 0;
+    foreach ($cart as $item) {
+        $total += $item['productPrice'] * $item['quantity'];
+    }
+    return number_format($total, 0, '', ',');
 }
 ?>

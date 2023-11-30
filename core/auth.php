@@ -4,8 +4,9 @@ require_once '../core/db/mysql.php';
 $pdo = get_pdo();
 
 function register($email, $password, $role='user'){
-    if(email_exisit($email))
+    if(email_exisit($email)) {
         return false;
+    }
     
     global $pdo;
 

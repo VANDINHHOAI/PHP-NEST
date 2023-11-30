@@ -4,10 +4,10 @@ require_once '../core/boot.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $is_register_success = true;
 
-    if(isset($_POST['email']) && isset($_POST['password'])){
+    if(isset($_POST['email']) && !empty(trim($_POST['email'])) && isset($_POST['password']) && !empty(trim($_POST['password']))){
         $user = register($_POST['email'], $_POST['password']);  
         if($user == false){
-            $_SESSION['flash_message'] = 'Register failed';
+            $_SESSION['flash_message'] = 'User already exist!';
             $is_register_success = false;
         }else{
             $_SESSION['user'] = $user;

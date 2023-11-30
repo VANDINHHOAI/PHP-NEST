@@ -71,12 +71,12 @@
                         <label for="email" class="rgt-form__lable-email">Email</label>
                         <input id="email" name="email" type="text" class="rgt-form__input-email" placeholder="Your email">
                         <label for="password" class="rgt-form__lable-password">Password</label>
-                        <input id="password" name="password" type="text" class="rgt-form__input-password" placeholder="Your password">
+                        <input id="password" name="password" type="password" class="rgt-form__input-password" placeholder="Your password">
                         <label for="cf-password" class="rgt-form__lable-cf-password">Confirm password</label>
-                        <input id="cf-password" name="c-password" type="text" class="rgt-form__input-cf-password" placeholder="Confirm your password">
+                        <input id="cf-password" name="cpassword" type="password" class="rgt-form__input-cf-password" placeholder="Confirm your password">
 
                         <div class="rgt-form-action">
-                            <input type="submit" value="Register" class="rgt-btn">
+                            <input type="submit" value="Register" class="rgt-btn" style="background: #3bb77e; cursor: pointer;">
                                 <a href=""></a>
                             </input>
                             <span><a href="../public/login.html">You have an account?</a></span>

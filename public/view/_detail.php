@@ -121,7 +121,7 @@
                                             </div>
                                         </div>
                                         <button class="bg-[#3bb77e] text-white font-semibold px-5 py-4 ml-1 border-2 border-[#3bb77e] hover:bg-yellow-500 rounded-md
-                                hover:border-yellow-500 transition duration-300 ease-in">
+                                        hover:border-yellow-500 transition duration-300 ease-in">
                                             Add to cart
                                         </button>
                                     </form>
