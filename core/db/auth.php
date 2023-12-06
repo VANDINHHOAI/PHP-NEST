@@ -1,6 +1,6 @@
 <?php 
 
-require_once '../core/db/mysql.php';
+require_once 'mysql.php';
 $pdo = get_pdo();
 
 function register($email, $password, $role='user'){

@@ -47,51 +47,56 @@
         <?php include_once './view/inc/_header.php' ?>
 
         <!-- ===================CART===================  -->
-        <div class="cart hidden md:block fixed top-0 -right-full w-96 h-screen p-5 overflow-y-auto overflow-x-hidden bg-white z-50 shadow" style="transition: .7s;">
-            <div class="cart-title text-center text-3xl font-semibold text-[#253D76] mt-8">Your cart</div>
-            <!-- CONTENT -->
-            <div class="cart-content">
-                <div class="list-cart overflow-hidden mt-5">
-                    <?php foreach ($_SESSION['cart'] as $item) { ?>
-                        <div class="flex items-center gap-x-5 p-2">
-                            <div class="img w-20 h-20"><img src="./img/Products/<?php echo $item['productImage']; ?>" alt="product"></div>
-                            <div class="info text-[#253d4e]">
-                                <div class="product-name font-semibold"><?php echo $item['productName']; ?></div>
-                                <div class="price mt-3">$<?php echo $item['productPrice'] ?></div>
-                                <div class="flex items-center mt-3 gap-x-3">
-                                    <button class="w-6 h-6 border hover:bg-green-500 rounded-full"><i class='bx bx-chevron-left'></i></button>
-                                    <span class="quantity">1</span>
-                                    <button class="w-6 h-6 border hover:bg-green-500 rounded-full"><i class='bx bx-chevron-right'></i></button>
-                                </div>
-                            </div>
+        <!-- CART  -->
+        <?php if (!empty($_SESSION['cart'])) { ?>
+            <div class="cart hidden md:block fixed top-0 -right-full w-96 h-screen p-5 overflow-y-auto overflow-x-hidden bg-white z-50 shadow" style="transition: .7s;">
+                <div class="cart-title text-center text-3xl font-semibold text-[#253D76] mt-8">Your cart</div>
+                <!-- CONTENT -->
+                <div class="cart-content">
+                    <div class="list-cart overflow-hidden mt-5">
+                        <?php if (!empty($_SESSION['cart'])) { ?>
+                            <?php foreach ($_SESSION['cart'] as $item) { ?>
+                                <div class="flex items-center gap-x-5 p-2">
+                                    <div class="img w-20 h-20"><img src="./img/Products/<?php echo $item['productImage']; ?>" alt="product"></div>
+                                    <div class="info text-[#253d4e]">
+                                        <div class="product-name font-semibold"><?php echo $item['productName'] ?></div>
+                                        <div class="price mt-3">$<?php echo $item['productPrice'] ?></div>
+                                        <div class="flex items-center mt-3 gap-x-3">
+                                            <button class="w-6 h-6 border hover:bg-green-500 rounded-full"><i class='bx bx-chevron-left'></i></button>
+                                            <span class="quantity">1</span>
+                                            <button class="w-6 h-6 border hover:bg-green-500 rounded-full"><i class='bx bx-chevron-right'></i></button>
+                                        </div>
+                                    </div>
 
-                            <form action="cart.php" method="post">
-                                <input type="hidden" name="_method" value="delete">
-                                <input type="hidden" name="productId" value="<?php echo $item['productId']; ?>">
-                                <div class="text-xl text-red-500">
-                                    <button><i class='bx bx-trash'></i></button>
+                                    <form action="cart.php" method="post">
+                                        <input type="hidden" name="_method" value="delete">
+                                        <input type="hidden" name="productId" value="<?php echo $item['productId']; ?>">
+                                        <div class="text-xl text-red-500">
+                                            <button><i class='bx bx-trash'></i></button>
+                                        </div>
+                                    </form>
                                 </div>
-                            </form>
-                        </div>
-                    <?php  } ?>
+                            <?php } ?>
+                        <?php } ?>
+                    </div>
                 </div>
-            </div>
 
-            <!-- TOTAL -->
-            <div class="total flex items-center justify-end mt-5 gap-x-3 border-t">
-                <div class="total-title text-lg">Total</div>
-                <div class="total-price text-base">$0</div>
+                <!-- TOTAL -->
+                <div class="total flex items-center justify-end mt-5 gap-x-3 font-semibold border-t">
+                    <div class="total-title text-lg text-[#7e7e7e]">Total:</div>
+                    <div class="total-price text-base text-[#3bb77e] font-semibold">$<?php echo total_cart(); ?></div>
+                </div>
+                <!-- View cart and Check out Button -->
+                <div class="flex items-center justify-around mt-8 text-lg">
+                    <button type="button" class="view-cart-btn text-white bg-[#3BB77E] py-2 px-4 rounded
+                    hover:bg-yellow-500 transition duration-300"><a href="cart.php">View cart</a></button>
+                    <button type="button" class="check-out-btn text-white bg-[#3BB77E] py-2 px-4 rounded
+                    hover:bg-yellow-500 transition duration-300"><a href="check_out.php">Checkout</a></button>
+                </div>
+                <!-- CART CLOSE -->
+                <button class="absolute top-5 right-5 text-4xl hover:rotate-180 hover:text-red-500 transition duration-500"><i class='bx bx-x' id="cart-close"></i></button>
             </div>
-            <!-- View cart and Check out Button -->
-            <div class="flex items-center justify-around mt-8 text-lg">
-                <button type="button" class="view-cart-btn text-white bg-[#3BB77E] py-2 px-4 rounded
-                hover:bg-yellow-500 transition duration-300"><a href="cart.php">View cart</a></button>
-                <button type="button" class="check-out-btn text-white bg-[#3BB77E] py-2 px-4 rounded
-                hover:bg-yellow-500 transition duration-300"><a href="check_out.php">Checkout</a></button>
-            </div>
-            <!-- CART CLOSE -->
-            <button class="absolute top-5 right-5 text-4xl hover:rotate-180 transition duration-500"><i class='bx bx-x' id="cart-close"></i></button>
-        </div>
+        <?php } ?>
 
         <!-- ===================BREADCRUMB=================== -->
         <div>
@@ -115,7 +120,7 @@
         <!-- container -->
         <div class="md:px-[10px]">
             <div class="w-full">
-                <div class="py-20 md:px-20 rounded-2xl" style="background: url(./img/banner/banner-10-min.png);">
+                <div class="py-20 md:px-20 mt-10 rounded-2xl" style="background: url(./img/banner/banner-10-min.png);">
                     <div class="flex items-center justify-between">
                         <h1 class="w-full md:w-auto text-center text-5xl text-[#253d4e] font-semibold">Shop Cart</h1>
                         <ul class="hidden md:flex flex-wrap items-center text-lg text-[#3bb77e] font-semibold ml-20 gap-x-7">
@@ -200,62 +205,70 @@
                                     <div><button class="w-full md:w-auto mt-2 md:mt-0 px-5 py-[10px] bg-[#3bb77e] hover:bg-yellow-500 text-white font-semibold rounded transition duration-300">Uppdate cart</button></div>
                                 </div>
 
-                                <div class="w-full flex justify-end mt-5">
-                                    <div class="w-full md:w-1/2 text-left">
-                                        <h1 class="text-2xl text-[#253d4e] font-semibold">Cart totals</h1>
+                                <?php if (!empty($_SESSION['cart'])) { ?>
+                                    <div class="w-full flex justify-end mt-5">
+                                        <div class="w-full md:w-1/2 text-left">
+                                            <h1 class="text-2xl text-[#253d4e] font-semibold">Cart totals</h1>
 
-                                        <div class="md:hidden">
-                                            <div class="bg-[#f4f6fa] p-5">
-                                                <div class="p-2 border">
-                                                    <h2 class="text-[#253d4e] font-semibold">Subtotal:</h2>
-                                                    <span class="text-[#3bb77e]">$<?php echo total_cart(); ?></span>
+                                            <div class="md:hidden">
+                                                <div class="bg-[#f4f6fa] p-5">
+                                                    <div class="p-2 border">
+                                                        <h2 class="text-[#253d4e] font-semibold">Subtotal:</h2>
+                                                        <span class="text-[#3bb77e]">
+                                                            <?php if (!empty($_SESSION['cart'])) { ?>
+                                                                <?php echo total_cart(); ?>
+                                                            <?php } else { ?>
+                                                                <?php echo '0'; ?>
+                                                            <?php } ?>
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="bg-[#f4f6fa] p-5 mt-3">
+                                                    <div class="p-2 border">
+                                                        <h2 class="text-[#253d4e] font-semibold">Shipping:</h2>
+                                                        <span class="text-[#7e7e7e]">Flat rate</span>
+                                                        <span class="text-[#7e7e7e]">Shipping to CA.</span>
+                                                        <span class="text-[#3bb77e]">Change address</span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="bg-[#f4f6fa] p-5 mt-3">
+                                                    <div class="p-2 border">
+                                                        <h2 class="text-[#253d4e] font-semibold">Total:</h2>
+                                                        <span class="text-[#3bb77e]">$<?php echo total_cart(); ?></span>
+                                                    </div>
                                                 </div>
                                             </div>
 
-                                            <div class="bg-[#f4f6fa] p-5 mt-3">
-                                                <div class="p-2 border">
-                                                    <h2 class="text-[#253d4e] font-semibold">Shipping:</h2>
-                                                    <span class="text-[#7e7e7e]">Flat rate</span>
-                                                    <span class="text-[#7e7e7e]">Shipping to CA.</span>
-                                                    <span class="text-[#3bb77e]">Change address</span>
-                                                </div>
-                                            </div>
+                                            <table class="hidden md:block w-full border mt-5">
+                                                <tr class="border-b">
+                                                    <th class="p-5 border-r text-lg text-[#253d4e] font-medium">Subtotal</th>
+                                                    <th class="p-5 text-[#3bb77e] font-medium">$<?php echo total_cart(); ?></th>
+                                                </tr>
 
-                                            <div class="bg-[#f4f6fa] p-5 mt-3">
-                                                <div class="p-2 border">
-                                                    <h2 class="text-[#253d4e] font-semibold">Total:</h2>
-                                                    <span class="text-[#3bb77e]">$<?php echo total_cart(); ?></span>
-                                                </div>
-                                            </div>
+                                                <tr class="border-b">
+                                                    <th class="p-5 border-r text-lg text-[#253d4e] font-medium">Shipping</th>
+                                                    <th class="p-5">
+                                                        <ul>
+                                                            <li class="text-[#7e7e7e] font-medium"><span>Flat rate</span></li>
+                                                            <li class="my-3 text-[#7e7e7e] font-medium"><span>Shipping to CA.</span></li>
+                                                            <li class="text-[#3bb77e] font-medium"><span>Change address</span></li>
+                                                        </ul>
+                                                    </th>
+                                                </tr>
+
+                                                <tr>
+                                                    <th class="p-5 border-r text-lg text-[#253d4e] font-medium">Total</th>
+                                                    <th class="p-5 text-[#3bb77e] font-medium">$<?php echo total_cart(); ?></th>
+                                                </tr>
+                                            </table>
+
+                                            <div><button class="w-full md:w-auto mt-2 md:mt-5 px-5 py-[10px] bg-[#3bb77e] hover:bg-yellow-500 text-white font-semibold rounded transition duration-300">Proceed to checkout</button></div>
+
                                         </div>
-
-                                        <table class="hidden md:block w-full border mt-5">
-                                            <tr class="border-b">
-                                                <th class="p-5 border-r text-lg text-[#253d4e] font-medium">Subtotal</th>
-                                                <th class="p-5 text-[#3bb77e] font-medium">$<?php echo total_cart(); ?></th>
-                                            </tr>
-
-                                            <tr class="border-b">
-                                                <th class="p-5 border-r text-lg text-[#253d4e] font-medium">Shipping</th>
-                                                <th class="p-5">
-                                                    <ul>
-                                                        <li class="text-[#7e7e7e] font-medium"><span>Flat rate</span></li>
-                                                        <li class="my-3 text-[#7e7e7e] font-medium"><span>Shipping to CA.</span></li>
-                                                        <li class="text-[#3bb77e] font-medium"><span>Change address</span></li>
-                                                    </ul>
-                                                </th>
-                                            </tr>
-
-                                            <tr>
-                                                <th class="p-5 border-r text-lg text-[#253d4e] font-medium">Total</th>
-                                                <th class="p-5 text-[#3bb77e] font-medium">$<?php echo total_cart(); ?></th>
-                                            </tr>
-                                        </table>
-
-                                        <div><button class="w-full md:w-auto mt-2 md:mt-5 px-5 py-[10px] bg-[#3bb77e] hover:bg-yellow-500 text-white font-semibold rounded transition duration-300">Proceed to checkout</button></div>
-
                                     </div>
-                                </div>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>

@@ -1,5 +1,5 @@
 <?php 
-session_start();
+include_once '../core/db/boot.php';
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
     if(isset($_POST['_method'])){
@@ -90,5 +90,14 @@ function total_cart(){
         $total += $item['productPrice'] * $item['quantity'];
     }
     return number_format($total, 0, '', ',');
+}
+
+function number_cart_product(){
+    $cart = $_SESSION['cart'];
+    $number = 0;
+    foreach ($cart as $order_detail) {
+        $number += $order_detail['quantity'];
+    }
+    return $number;
 }
 ?>

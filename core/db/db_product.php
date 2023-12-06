@@ -25,6 +25,7 @@ function get_all_products(){
             'description' => $row['description'],
             'price' => $row['price'],
             'name' => $row['name'],
+            'quantity' => $row['quantity'],
         );
         array_push($product_list, $product);
     }

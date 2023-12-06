@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../public/css/output.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="shortcut icon" href="./img/Logo/logo-tap.png" type="image/x-icon">
+    <link rel="stylesheet" href="../public/css/swiper-bundel.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -85,51 +86,7 @@
         <?php include_once './view/inc/_header.php' ?>
 
         <!-- CART  -->
-        <div class="cart hidden md:block fixed top-0 -right-full w-96 h-screen p-5 overflow-y-auto overflow-x-hidden bg-white z-50 shadow" style="transition: .7s;">
-            <div class="cart-title text-center text-3xl font-semibold text-[#253D76] mt-8">Your cart</div>
-            <!-- CONTENT -->
-            <div class="cart-content">
-                <div class="list-cart overflow-hidden mt-5">
-                    <?php foreach ($_SESSION['cart'] as $item) { ?>
-                        <div class="flex items-center gap-x-5 p-2">
-                            <div class="img w-20 h-20"><img src="./img/Products/<?php echo $item['productImage']; ?>" alt="product"></div>
-                            <div class="info text-[#253d4e]">
-                                <div class="product-name font-semibold"><?php echo $item['productName'] ?></div>
-                                <div class="price mt-3">$<?php echo $item['productPrice'] ?></div>
-                                <div class="flex items-center mt-3 gap-x-3">
-                                    <button class="w-6 h-6 border hover:bg-green-500 rounded-full"><i class='bx bx-chevron-left'></i></button>
-                                    <span class="quantity">1</span>
-                                    <button class="w-6 h-6 border hover:bg-green-500 rounded-full"><i class='bx bx-chevron-right'></i></button>
-                                </div>
-                            </div>
-
-                            <form action="index.php" method="post">
-                                <input type="hidden" name="_method" value="delete">
-                                <input type="hidden" name="productId" value="<?php echo $item['productId']; ?>">
-                                <div class="text-xl text-red-500">
-                                    <button><i class='bx bx-trash'></i></button>
-                                </div>
-                            </form>
-                        </div>
-                    <?php } ?>
-                </div>
-            </div>
-
-            <!-- TOTAL -->
-            <div class="total flex items-center justify-end mt-5 gap-x-3 border-t">
-                <div class="total-title text-lg">Total</div>
-                <div class="total-price text-base">$0</div>
-            </div>
-            <!-- View cart and Check out Button -->
-            <div class="flex items-center justify-around mt-8 text-lg">
-                <button type="button" class="view-cart-btn text-white bg-[#3BB77E] py-2 px-4 rounded
-                hover:bg-yellow-500 transition duration-300"><a href="cart.php">View cart</a></button>
-                <button type="button" class="check-out-btn text-white bg-[#3BB77E] py-2 px-4 rounded
-                hover:bg-yellow-500 transition duration-300"><a href="check_out.php">Checkout</a></button>
-            </div>
-            <!-- CART CLOSE -->
-            <button class="absolute top-5 right-5 text-4xl hover:rotate-180 transition duration-500"><i class='bx bx-x' id="cart-close"></i></button>
-        </div>
+        <?php include_once './view/inc/_cart.php' ?>
 
         <!-- ===Banner=== -->
         <div class="py-5 h-[538px] md:h-auto">
@@ -489,9 +446,9 @@
                         <?php for ($i = 0; $i < 4; $i++) { ?>
                             <div class="group mt-5 md:mt-0 border rounded-md hover:border-green-500 hover:shadow hover:scale-[1.01]
                         transition duration-300 ease-in-out cursor-pointer relative">
-                                <a href="detail.php?imageProduct=<?php echo $productList[$i]['image'] . ".jpg"?> &nameProduct=<?php echo $productList[$i]['name']; ?>  &priceProduct=<?php echo $productList[$i]['price']; ?>">
+                                <a href="detail.php?imageProduct=<?php echo $productList[$i]['image'];?> &nameProduct=<?php echo $productList[$i]['name']; ?>  &priceProduct=<?php echo $productList[$i]['price']; ?>">
                                     <div class="w-full px-6 pt-6">
-                                        <img src="./img/Products/<?php echo $productList[$i]['image'] . ".jpg"?>" alt="">
+                                        <img src="./img/Products/<?php echo $productList[$i]['image']?>.jpg" alt="">
                                     </div>
                                 </a>
                                 <div class="px-5 pb-5">
@@ -1156,6 +1113,8 @@
             </div>
         </div>
     </div>
+    
+    <script src="./js/swiper-bundle.min.js"></script>
     <script src="./js/main.js"></script>
 </body>
 

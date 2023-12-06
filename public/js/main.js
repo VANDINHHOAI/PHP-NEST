@@ -23,9 +23,11 @@ const cartIcon = document.querySelector('#cart-icon');
 const cart = document.querySelector('.cart');
 const closeCart = document.querySelector("#cart-close");
 
-closeCart.addEventListener("click", () => {
-    cart.classList.remove('cart-active');
-});
+if(closeCart) {
+    closeCart.addEventListener("click", () => {
+        cart.classList.remove('cart-active');
+    });
+}
 
 if(cartIcon) {
     cartIcon.addEventListener('click', () => {

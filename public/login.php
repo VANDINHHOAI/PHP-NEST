@@ -1,5 +1,5 @@
 <?php
-require_once '../core/boot.php';
+include_once '../core/db/boot.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $isLoginSuccess = true;
@@ -31,5 +31,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     }else { 
         include_once './view/_login.php';
     }
+}
+
+function number_cart_product(){
+    $cart = $_SESSION['cart'];
+    $number = 0;
+    foreach ($cart as $order_detail) {
+        $number += $order_detail['quantity'];
+    }
+    return $number;
 }
 ?>

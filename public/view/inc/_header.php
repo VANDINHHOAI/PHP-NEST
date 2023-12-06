@@ -80,7 +80,19 @@
                         <li class="mx-3 text-3xl"><a href="#"><i class='bx bx-heart'></i></a></li>
                         <li class="group mx-3 text-3xl relative" id="cart-icon">
                             <a href="#"><i class='bx bx-cart'></i></a>
-                            <div class="quantity w-5 h-5 text-center text-sm text-white font-semibold bg-green-500 absolute -top-1 -right-2 rounded-full">0</div>
+                            <div class="quantity w-5 h-5 text-center text-sm text-white font-semibold bg-green-500 absolute -top-1 -right-2 rounded-full">
+                                <?php if(!empty($_SESSION['cart'])) { ?>
+                                    <?php echo number_cart_product(); ?>
+                                <?php }else { ?>
+                                    <?php echo '0'?>
+                                <?php } ?>
+                            </div>
+
+                            <?php if(empty($_SESSION['cart'])) { ?>
+                                <div class="hidden group-hover:block p-5 w-[388px] text-center top-full right-[-30px] absolute shadow-lg z-10">
+                                    <p class="text-lg text-[#7e7e7e]">No products in the cart</p>
+                                </div>
+                            <?php } ?>
                         </li>
 
                         <li class="group mx-3 text-3xl relative">
@@ -89,6 +101,7 @@
                                     text-green-500 font-semibold z-10">
                                 <?php if (isset($_SESSION['user'])) { ?>
                                     <li class="hover:bg-yellow-400 hover:text-white p-3 border-b cursor-pointer"><a href="logout.php">Log out</a></li>
+                                    <li class="hover:bg-yellow-400 hover:text-white p-3 border-b cursor-pointer"><a href="order.php">My order</a></li>
                                 <?php } else { ?>
                                     <li class="hover:bg-yellow-400 hover:text-white p-3 border-b cursor-pointer"><a href="login.php">Log in</a></li>
                                     <li class="hover:bg-yellow-400 hover:text-white p-3 cursor-pointer"><a href="register.php">Register</a></li>
