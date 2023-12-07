@@ -34,7 +34,7 @@ function get_all_categories(){
 function delete_category($category_id){
     global $pdo;
 
-    $sql = "DELETE FROM CATEGORIES WHERE ID > :id";
+    $sql = "DELETE FROM CATEGORIES WHERE ID = :id";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':id', $category_id);
 

@@ -42,7 +42,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Users_id</label>
-                                    <input type="text" name="users_id" value="<?php echo $order['users_id']; ?>"  class="form-control" id="exampleInputPassword1" placeholder="">
+                                    <input type="text" name="users_id" value="<?php echo $order['user_id']; ?>"  class="form-control" id="exampleInputPassword1" placeholder="">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Address</label>
