@@ -97,18 +97,29 @@
 
                         <li class="group mx-3 text-3xl relative">
                             <a href="#"><i class='bx bx-user'></i></a>
-                            <ul class="w-52 bg-white absolute hidden group-hover:block text-base top-full right-0 text-center border shadow-md rounded
-                                    text-green-500 font-semibold z-10">
-                                <?php if (isset($_SESSION['user'])) { ?>
+                            <?php if (isset($_SESSION['email']) && $_SESSION['email'] != "" && $_SESSION["role"] == "admin") { ?>
+                                <ul class="w-52 bg-white absolute hidden group-hover:block text-base top-full right-0 text-center border shadow-md rounded
+                                     text-green-500 font-semibold z-10">
+                                    <li class="hover:bg-yellow-400 hover:text-white p-3 border-b cursor-pointer"><a href="#"><?php echo $_SESSION['email'] ?></a></li>                               
+                                    <li class="hover:bg-yellow-400 hover:text-white p-3 border-b cursor-pointer"><a href="../admin/index.php">Admin</li>                               
                                     <li class="hover:bg-yellow-400 hover:text-white p-3 border-b cursor-pointer"><a href="logout.php">Log out</a></li>
                                     <li class="hover:bg-yellow-400 hover:text-white p-3 border-b cursor-pointer"><a href="order.php">My order</a></li>
-                                <?php } else { ?>
-                                    <li class="hover:bg-yellow-400 hover:text-white p-3 border-b cursor-pointer"><a href="login.php">Log in</a></li>
-                                    <li class="hover:bg-yellow-400 hover:text-white p-3 cursor-pointer"><a href="register.php">Register</a></li>
-                                <?php } ?>
-                            </ul>
+                                </ul>
+                            <?php } else if (isset($_SESSION['email']) && $_SESSION['email'] != "" && $_SESSION['role'] == "user") { ?>
+                                <ul class="w-52 bg-white absolute hidden group-hover:block text-base top-full right-0 text-center border shadow-md rounded
+                                     text-green-500 font-semibold z-10">
+                                    <li class="hover:bg-yellow-400 hover:text-white p-3 border-b cursor-pointer"><a href="#"><?php echo $_SESSION['email'] ?></a></li>  
+                                    <li class="hover:bg-yellow-400 hover:text-white p-3 border-b cursor-pointer"><a href="logout.php">Log out</a></li>
+                                    <li class="hover:bg-yellow-400 hover:text-white p-3 border-b cursor-pointer"><a href="order.php">My order</a></li>
+                                </ul>
+                            <?php } else { ?>
+                                <ul class="w-52 bg-white absolute hidden group-hover:block text-base top-full right-0 text-center border shadow-md rounded
+                                     text-green-500 font-semibold z-10">
+                                    <li class="hover:bg-yellow-400 hover:text-white p-3 border-b cursor-pointer"><a href="login.php">Log in</a></li>  
+                                    <li class="hover:bg-yellow-400 hover:text-white p-3 border-b cursor-pointer"><a href="register.php">Register</a></li>
+                                </ul>
+                            <?php } ?>
                         </li>
-                        
                     </ul>
                 </div>
             </div>

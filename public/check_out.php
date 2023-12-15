@@ -3,7 +3,7 @@ include_once '../core/db/boot.php';
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
     if (isset($_POST['firstName']) && isset($_POST['email']) && isset($_POST['phone']) &&  isset($_POST['address'])) {
-        $email = $_SESSION['user']['email'];
+        $email = $_SESSION['email'];
         $user = get_user_by_email($email);
         if ($user) {
             $id = $user['id'];
@@ -53,12 +53,12 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 if($_SERVER['REQUEST_METHOD'] === 'GET'){
     $productList = get_all_products();
-    $_SESSION['isCheckOut'] = false;
+    $_SESSION['isCheck'] = false;
 
-    if (isset($_SESSION['user'])) {
+    if (isset($_SESSION['email'])) {
         include_once './view/_checkout.php'; 
     }else { 
-        $_SESSION['isCheckOut'] = true;
+        $_SESSION['isCheck'] = true;
         include_once './view/_login.php';
     }
 }

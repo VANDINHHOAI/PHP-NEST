@@ -82,19 +82,18 @@
                         <ul class="w-auto text-center">
                             <li class="mt-2 font-bold text-start text-[#253d4e]">Information :</li>
                             <li class="text-start text-[#7e7e7e]">Email :
-                                <span class="text-[#3bb77e] font-semibold"><?php echo $_SESSION['user']['email'] ?></span>
+                                <span class="text-[#3bb77e] font-semibold"><?php echo $_SESSION['email'] ?></span>
                             </li>
                             <li class="text-start text-[#7e7e7e]">Phone :
                                 <?php foreach($order as $itemOrder) { ?>
                                     <span class="text-[#3bb77e] font-semibold">
                                         <?php echo $itemOrder['phone'] . ", "; ?>
-
                                     </span>
                                 <?php } ?>
                             </li>
                             <li class="text-start text-[#7e7e7e]">ID :
                                 <span class="text-[#3bb77e] font-semibold">
-                                    <?php echo $_SESSION['user']['id'];?>
+                                    <?php echo $_SESSION['users_id'];?>
                                 </span>
                             </li>
                             <li class="text-start text-[#7e7e7e]">Address:
@@ -107,34 +106,34 @@
                         </ul>
                     </div>
                     <div class="mt-5">
-                        <table class="border-2 border-[#3bb77e] w-full ">
+                        <table class="border-4 border-[#3bb77e] w-full ">
                             <thead class="border-b w-full">
                                 <tr class=" w-full border-[#3bb77e] border-b ">
-                                    <th class="p-4 text-[#253d4e]">Order</th>
-                                    <th class="p-4 text-[#253d4e]">Date</th>
-                                    <th class="p-4 text-[#253d4e]">Status</th>
-                                    <th class="p-4 text-[#253d4e]">Total</th>
-                                    <th class="p-4 text-[#253d4e]">Name products</th>
+                                    <th class="p-4 text-[#3bb77e]">Order</th>
+                                    <th class="p-4 text-[#3bb77e]">Date</th>
+                                    <th class="p-4 text-[#3bb77e]">Status</th>
+                                    <th class="p-4 text-[#3bb77e]">Total</th>
+                                    <th class="p-4 text-[#3bb77e]">Name products</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php foreach($order as $itemOrder) { ?>
-                                    <tr class="border-b border-black ">
-                                        <td class="p-4 text-center">
+                                    <tr class="border-b border-[#3bb77e] ">
+                                        <td class="p-4 text-center text-[#253d4e] font-semibold">
                                             <?php echo $itemOrder['code'] ?>
                                         </td>
-                                        <td class="p-4 text-center">
+                                        <td class="p-4 text-center text-[#253d4e] font-semibold">
                                         <?php echo $itemOrder['date'] ?>
                                         </td>
-                                        <td class="p-4 text-center">
+                                        <td class="p-4 text-center text-[#253d4e] font-semibold">
                                         <?php echo $itemOrder['status'] ?>
                                         </td>
-                                        <td class="p-4 text-center">
+                                        <td class="p-4 text-center text-[#253d4e] font-semibold">
                                             <?php echo "$" . $itemOrder['total'] ?> for
                                             <?php echo $itemOrder['number'] ?> item
                                         </td>
 
-                                        <td class="p-4 text-center">
+                                        <td class="p-4 text-center text-[#253d4e] font-semibold">
                                             <?php foreach ($itemOrder['name'] as $productName): ?>
                                                 <?php echo $productName; ?><br>
                                             <?php endforeach; ?>

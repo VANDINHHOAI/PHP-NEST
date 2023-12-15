@@ -264,7 +264,7 @@
                                                 </tr>
                                             </table>
 
-                                            <div><button class="w-full md:w-auto mt-2 md:mt-5 px-5 py-[10px] bg-[#3bb77e] hover:bg-yellow-500 text-white font-semibold rounded transition duration-300">Proceed to checkout</button></div>
+                                            <div><button class="w-full md:w-auto mt-2 md:mt-5 px-5 py-[10px] bg-[#3bb77e] hover:bg-yellow-500 text-white font-semibold rounded transition duration-300"><a href="check_out.php">Proceed to checkout</a></button></div>
 
                                         </div>
                                     </div>

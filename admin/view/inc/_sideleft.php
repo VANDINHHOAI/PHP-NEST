@@ -56,8 +56,8 @@
         </div>
         <div class="sb-sidenav-footer">
             <div class="small">Admin:</div>
-            <?php if(isset($_SESSION['user'])) { ?>
-                <?php echo $_SESSION['user']['email']?>
+            <?php if(isset($_SESSION['email'])) { ?>
+                <?php echo $_SESSION['email']?>
             <?php }else { ?>
                 <?php echo ""; ?>
             <?php } ?>

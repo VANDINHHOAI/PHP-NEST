@@ -49,6 +49,24 @@ function login($email, $password){
     return false;
 }
 
+function checkUserRole($email, $password) {
+    $user = login($email, $password);
+
+    if ($user) {
+        // Kiểm tra vai trò của người dùng
+        if ($user['role'] === 'admin') {
+            return $_SESSION['admin'] = 'admin';
+        } elseif ($user['role'] === 'user') {
+            return $_SESSION['user'] = 'user';
+        } else {
+            // Nếu có các vai trò khác, bạn có thể xử lý ở đây
+            return 'unknown';
+        }
+    }
+
+    return 'not_found';
+}
+
 function email_exisit($email){
     global $pdo;
 

@@ -99,10 +99,7 @@
                                         <span id="price_old" class="text-lg text-green-300 line-through"><?php echo $product['price']; ?></span>
                                         <span id="product-price" class="text-xl font-semibold text-[#3bb77e] underline">$22.85</span>
                                     </div>
-                                    <p class="mt-5 mb-5 text-[#7e7e7e]">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                        Aliquam rem officia, corrupti reiciendis minima nisi modi,
-                                        quasi, odio minus dolore impedit fuga eum eligendi.
-                                    </p>
+                                    <p class="mt-5 mb-5 text-[#7e7e7e]"><?php echo $product['description'];?></p>
                                     <span class="text-[#b3af54]">26 in stock</span>
 
                                     <form action="cart.php" method="post" class="flex items-center mt-5">
@@ -513,7 +510,7 @@
                     <div class="flex flex-wrap gap-3 mt-5">
                         <div class="group flex items-center bg-white px-2 py-1 border rounded-full shadow hover:-translate-y-2
                         transition-all duration-300 ease-in-out cursor-pointer">
-                            bx bx-x <i class=' text-2xl text-[#7e7e7e]'></i>
+                            <i class='bx bx-x text-2xl text-[#7e7e7e]'></i> 
                             <Span class="text-[#3bb77e] font-semibold group-hover:text-red-500">Brown</Span>
                         </div>
 

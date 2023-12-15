@@ -67,11 +67,13 @@
                     <div class="px-[15px] w-full block">
                         <h2 class="text-center text-[40px] text-[#253d4e] font-bold mb-5">Log in</h2>
                         <form class="p-5 w-full rounded-3xl border block" method="post" action="login.php">
-                            <i style="color: red;"><?php if(isset( $_SESSION['flash_message'])) echo  $_SESSION['flash_message']; unset( $_SESSION['flash_message']); ?></i>
+                            <?php if (isset($error_message) && !empty($error_message)): ?>
+                                <div class="mess text-red-500">Your account or password is incorrect !</div>
+                            <?php endif; ?>
                             <label for="email" class="block mb-[5px] text-[#253d4e] font-semibold">Username or email address <span class="text-red-500 font-semibold">*</span></label>
-                            <input id="email" name="email" class="w-full h-16 px-5 border border-[#3bb77e] outline-none mb-4 rounded-lg" type="text" placeholder="Your email">
+                            <input id="email" name="email" class="w-full h-16 px-5 border border-[#3bb77e] outline-none mb-4 rounded-lg" type="text" placeholder="Username">
                             <label for="password" class="block mb-[5px] text-[#253d4e] font-semibold">Password <span class="text-red-500 font-semibold">*</span></label>
-                            <input id="password" name="password" class="w-full h-16 px-5 border border-[#3bb77e] outline-none mb-4 rounded-lg" type="password" placeholder="Your password">
+                            <input id="password" name="password" class="w-full h-16 px-5 border border-[#3bb77e] outline-none mb-4 rounded-lg" type="password" placeholder="Password">
                             <div class="flex items-center mb-5 gap-x-5">
                                 <input type="submit" value="Login" class="bg-[#3bb77e] px-5 py-3 text-white font-semibold rounded-md hover:bg-yellow-500
                                 transition duration-500 ease-in-out cursor-pointer">
