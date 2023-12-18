@@ -8,7 +8,7 @@
                 <?php if (!empty($_SESSION['cart'])) { ?>
                     <?php foreach ($_SESSION['cart'] as $item) { ?>
                         <div class="flex items-center gap-x-5 p-2">
-                            <div class="img w-20 h-20"><img src="./img/Products/<?php echo $item['productImage']; ?>" alt="product"></div>
+                            <div class="img w-20 h-20"><img src="public/img/Products/<?php echo $item['productImage']; ?>" alt="product"></div>
                             <div class="info text-[#253d4e]">
                                 <div class="product-name font-semibold"><?php echo $item['productName'] ?></div>
                                 <div class="price mt-3">$<?php echo $item['productPrice'] ?></div>

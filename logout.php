@@ -1,5 +1,5 @@
 <?php
-include_once '../core/db/boot.php';
+include_once 'core/db/boot.php';
 
 unset($_SESSION['email']);
 unset($_SESSION['password']);

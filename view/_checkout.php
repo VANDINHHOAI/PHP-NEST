@@ -7,7 +7,7 @@
     <title>Check out - Nest</title>
     <link rel="stylesheet" href="../public/css/output.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="shortcut icon" href="./img/Logo/logo-tap.png" type="image/x-icon">
+    <link rel="shortcut icon" href="public/img/Logo/logo-tap.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -74,7 +74,7 @@
                         <?php if (!empty($_SESSION['cart'])) { ?>
                             <?php foreach ($_SESSION['cart'] as $item) { ?>
                                 <div class="flex items-center gap-x-5 p-2">
-                                    <div class="img w-20 h-20"><img src="./img/Products/<?php echo $item['productImage']; ?>" alt="product"></div>
+                                    <div class="img w-20 h-20"><img src="public/img/Products/<?php echo $item['productImage']; ?>" alt="product"></div>
                                     <div class="info text-[#253d4e]">
                                         <div class="product-name font-semibold"><?php echo $item['productName'] ?></div>
                                         <div class="price mt-3">$<?php echo $item['productPrice'] ?></div>
@@ -85,7 +85,7 @@
                                         </div>
                                     </div>
 
-                                    <form action="check_out.php" method="post">
+                                    <form action="cart.php" method="post">
                                         <input type="hidden" name="_method" value="delete">
                                         <input type="hidden" name="productId" value="<?php echo $item['productId']; ?>">
                                         <div class="text-xl text-red-500">
@@ -202,7 +202,7 @@
                                         <?php foreach ($_SESSION['cart'] as $item) { ?>
                                             <?php if (!empty($_SESSION['cart'])) { ?>
                                                 <div class="flex justify-between py-5 border-b">
-                                                    <div class="w-16 h-16"><img class="w-full object-cover" src="./img/Products/<?php echo $item['productImage']; ?>" alt="product"></div>
+                                                    <div class="w-16 h-16"><img class="w-full object-cover" src="public/img/Products/<?php echo $item['productImage']; ?>" alt="product"></div>
                                                     <div>
                                                         <div class="text-sm md:text-base whitespace-nowrap">
                                                             <h1><?php echo $item['productName']; ?></h1>
@@ -255,7 +255,7 @@
                                         <li class="flex items-center justify-between">
                                             <input type="checkbox">
                                             <span class="text-xs md:text-base">PayPal</span>
-                                            <div class="w-24"><img src="./img/Apps/payment-method.png" alt=""></div>
+                                            <div class="w-24"><img src="public/img/Apps/payment-method.png" alt=""></div>
                                             <div class="text-xs md:text-base whitespace-nowrap hover:text-[#3bb77e]">
                                                 <a href="#">What is PayPal?</a>
                                             </div>

@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nest</title>
-    <link rel="stylesheet" href="../public/css/output.css">
+    <link rel="stylesheet" href="public/css/output.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="shortcut icon" href="./img/Logo/logo-tap.png" type="image/x-icon">
-    <link rel="stylesheet" href="../public/css/swiper-bundel.min.css">
+    <link rel="shortcut icon" href="public/img/Logo/logo-tap.png" type="image/x-icon">
+    <link rel="stylesheet" href="public/css/swiper-bundle.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -94,7 +94,7 @@
                 <!-- Slideshow-container -->
                 <div class="slide-show max-w-full m-auto h-full ">
                     <div class="list-slide flex rounded-3xl h-full overflow-hidden">
-                        <div class="slide fade min-w-full h-full px-5 md:px-[100px] py-[50px]" style="background: url(./img/banner/slider-1-min.png); background-position: center; background-size: cover; background-repeat: no-repeat;">
+                        <div class="slide fade min-w-full h-full px-5 md:px-[100px] py-[50px]" style="background: url(public/img/banner/slider-1-min.png); background-position: center; background-size: cover; background-repeat: no-repeat;">
                             <div class="w-full h-auto mb-10 text-left">
                                 <h1 class="text-4xl md:text-7xl text-[#253d4e] font-semibold">Don't miss amazing<br>grocery deals</h1>
                             </div>
@@ -107,7 +107,7 @@
                             </div>
                         </div>
 
-                        <div class="slide fade min-w-full h-full px-5 md:px-[100px] py-[50px]" style="background: url(./img/banner/slider-2-min.png); background-position: center; background-size: cover; background-repeat: no-repeat;">
+                        <div class="slide fade min-w-full h-full px-5 md:px-[100px] py-[50px]" style="background: url(public/img/banner/slider-2-min.png); background-position: center; background-size: cover; background-repeat: no-repeat;">
                             <div class="w-full h-auto mb-10 text-left">
                                 <h1 class="text-4xl md:text-7xl text-[#253d4e] font-semibold">Fresh Vegetables<br>Big discount</h1>
                             </div>
@@ -153,10 +153,10 @@
                 <!-- Container -->
                 <div id="container" class="mt-5">
                     <!-- Slider-container -->
-                    <div class="w-full overflow-hidden">
-                        <div class="flex w-full gap-x-5">
-                            <div class="group flex-1 py-5 bg-[#f2fce4] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
-                                <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="./img/Feature_categories-img/cat-1.png" alt="Categories">
+                    <div class="w-full overflow-hidden swiper featured__swiper">
+                        <div class="flex w-full gap-x-5 swiper-wrapper">
+                            <div class="group swiper-slide flex-1 py-5 bg-[#f2fce4] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
+                                <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="public/img/Feature_categories-img/cat-1.png" alt="Categories">
 
                                 <div class="text-center flex flex-col">
                                     <span class="text-[#253d4e] group-hover:text-[#3bb77e] font-semibold">Cake & Milk</span>
@@ -164,8 +164,8 @@
                                 </div>
                             </div>
 
-                            <div class="group flex-1 py-5 bg-[#fffceb] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
-                                <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="./img/Feature_categories-img/cat-2.png" alt="Categories">
+                            <div class="group swiper-slide flex-1 py-5 bg-[#fffceb] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
+                                <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="public/img/Feature_categories-img/cat-2.png" alt="Categories">
 
                                 <div class="text-center flex flex-col">
                                     <span class="text-[#253d4e] group-hover:text-[#3bb77e] font-semibold">Oganic Kiwi</span>
@@ -173,8 +173,8 @@
                                 </div>
                             </div>
 
-                            <div class="group flex-1 py-5 bg-[#ecffec] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
-                                <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="./img/Feature_categories-img/cat-3.png" alt="Categories">
+                            <div class="group swiper-slide flex-1 py-5 bg-[#ecffec] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
+                                <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="public/img/Feature_categories-img/cat-3.png" alt="Categories">
 
                                 <div class="text-center flex flex-col">
                                     <span class="text-[#253d4e] group-hover:text-[#3bb77e] font-semibold">Peach</span>
@@ -182,8 +182,8 @@
                                 </div>
                             </div>
 
-                            <div class="group flex-1 py-5 bg-[#feefea] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
-                                <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="./img/Feature_categories-img/cat-4.png" alt="Categories">
+                            <div class="group swiper-slide flex-1 py-5 bg-[#feefea] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
+                                <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="public/img/Feature_categories-img/cat-4.png" alt="Categories">
 
                                 <div class="text-center flex flex-col">
                                     <span class="text-[#253d4e] group-hover:text-[#3bb77e] font-semibold">Read Apple</span>
@@ -191,8 +191,8 @@
                                 </div>
                             </div>
 
-                            <div class="group flex-1 py-5 bg-[#fff3eb] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
-                                <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="./img/Feature_categories-img/cat-5.png" alt="Categories">
+                            <div class="group swiper-slide flex-1 py-5 bg-[#fff3eb] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
+                                <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="public/img/Feature_categories-img/cat-5.png" alt="Categories">
 
                                 <div class="text-center flex flex-col">
                                     <span class="text-[#253d4e] group-hover:text-[#3bb77e] font-semibold">Snacks</span>
@@ -200,8 +200,8 @@
                                 </div>
                             </div>
 
-                            <div class="group flex-1 py-5 bg-[#fff3ff] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
-                                <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="./img/Feature_categories-img/cat-6.png" alt="Categories">
+                            <div class="group swiper-slide flex-1 py-5 bg-[#fff3ff] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
+                                <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="public/img/Feature_categories-img/cat-6.png" alt="Categories">
 
                                 <div class="text-center flex flex-col">
                                     <span class="text-[#253d4e] group-hover:text-[#3bb77e] font-semibold">Vegetables</span>
@@ -209,8 +209,8 @@
                                 </div>
                             </div>
 
-                            <div class="group flex-1 py-5 bg-[#f2fce4] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
-                                <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="./img/Feature_categories-img/cat-7.png" alt="Categories">
+                            <div class="group swiper-slide flex-1 py-5 bg-[#f2fce4] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
+                                <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="public/img/Feature_categories-img/cat-7.png" alt="Categories">
 
                                 <div class="text-center flex flex-col">
                                     <span class="text-[#253d4e] group-hover:text-[#3bb77e] font-semibold">Strawberry</span>
@@ -218,8 +218,8 @@
                                 </div>
                             </div>
 
-                            <div class="group flex-1 py-5 bg-[#feefea] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
-                                <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="./img/Feature_categories-img/cat-8.png" alt="Categories">
+                            <div class="group swiper-slide flex-1 py-5 bg-[#feefea] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
+                                <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="public/img/Feature_categories-img/cat-8.png" alt="Categories">
 
                                 <div class="text-center flex flex-col">
                                     <span class="text-[#253d4e] group-hover:text-[#3bb77e] font-semibold">Black plum</span>
@@ -227,8 +227,8 @@
                                 </div>
                             </div>
 
-                            <div class="group flex-1 py-5 bg-[#f2fce4] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
-                                <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="./img/Feature_categories-img/cat-9.png" alt="Categories">
+                            <div class="group swiper-slide flex-1 py-5 bg-[#f2fce4] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
+                                <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="public/img/Feature_categories-img/cat-9.png" alt="Categories">
 
                                 <div class="text-center flex flex-col">
                                     <span class="text-[#253d4e] group-hover:text-[#3bb77e] font-semibold">Custard apple</span>
@@ -236,8 +236,8 @@
                                 </div>
                             </div>
 
-                            <div class="group flex-1 py-5 bg-[#feefea] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
-                                <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="./img/Feature_categories-img/cat-10.png" alt="Categories">
+                            <div class="group swiper-slide flex-1 py-5 bg-[#feefea] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
+                                <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="public/img/Feature_categories-img/cat-10.png" alt="Categories">
 
                                 <div class="text-center flex flex-col">
                                     <span class="text-[#253d4e] group-hover:text-[#3bb77e] font-semibold">Coffee & Tea</span>
@@ -252,7 +252,7 @@
             <div class="mt-5 md:mt-3">
                 <div class="block md:flex">
                     <div class="flex-1 md:p-[10px] relative">
-                        <img class="rounded-lg min-h-[300px] md:min-h-full object-cover" src="./img/banner/banner-small-1.png" alt="">
+                        <img class="rounded-lg min-h-[300px] md:min-h-full object-cover" src="public/img/banner/banner-small-1.png" alt="">
                         <!-- Title -->
                         <div class="absolute top-20 left-12 min-w-[200px] text-xl md:text-2xl font-semibold">
                             <h1 class="text-[#253d4e]">Everyday Fresh & Clean with Our Products</h1>
@@ -265,7 +265,7 @@
                     </div>
 
                     <div class="flex-1 md:p-[10px] mt-5 md:mt-0 relative">
-                        <img class="rounded-lg min-h-[300px] md:min-h-full object-cover" src="./img/banner/banner-small-2.png" alt="">
+                        <img class="rounded-lg min-h-[300px] md:min-h-full object-cover" src="public/img/banner/banner-small-2.png" alt="">
                         <!-- Title -->
                         <div class="absolute top-20 left-12 max-w-[200px] text-xl md:text-2xl font-semibold">
                             <h1 class="text-[#253d4e]">Make your Breakfast Healthy and Easy</h1>
@@ -278,7 +278,7 @@
                     </div>
 
                     <div class="flex-1 md:p-[10px] mt-5 md:mt-0 relative">
-                        <img class="rounded-lg min-h-[300px] md:min-h-full object-cover" src="./img/banner/banner-small-3.png" alt="">
+                        <img class="rounded-lg min-h-[300px] md:min-h-full object-cover" src="public/img/banner/banner-small-3.png" alt="">
                         <!-- Title -->
                         <div class="absolute top-20 left-12 max-w-[200px] text-xl md:text-2xl font-semibold">
                             <h1 class="text-[#253d4e]">The best Organic Products Online</h1>
@@ -339,7 +339,7 @@
                             transition duration-300 ease-in-out cursor-pointer relative">
                                 <a href="detail.php?id=<?php echo $product['id']; ?>">
                                     <div class="btn-more w-full px-6 pt-6">
-                                        <img class="product-img" src="./img/Products/<?php echo $product['image'] . ".jpg"?>" alt="">
+                                        <img class="product-img" src="public/img/Products/<?php echo $product['image'] . ".jpg"?>" alt="">
                                     </div>
                                 </a>
                                 <div class="px-5 pb-5">
@@ -433,7 +433,7 @@
 
                     <div class="grid grid-cols-2 md:grid-cols-5 gap-x-6 mt-5">
                         <div class="relative hidden md:block">
-                            <div class="w-full h-full"><img class="rounded-lg h-full w-full" src="./img/banner/banner-4.png" alt=""></div>
+                            <div class="w-full h-full"><img class="rounded-lg h-full w-full" src="public/img/banner/banner-4.png" alt=""></div>
                             <div class="absolute top-1/4 left-2">
                                 <h1 class="text-3xl font-semibold text-[#253d4e]">Bring natute into your home</h1>
                                 <button class="flex items-center mt-5 text-white font-semibold bg-green-500 px-5 py-2 rounded-md">
@@ -448,7 +448,7 @@
                         transition duration-300 ease-in-out cursor-pointer relative">
                                 <a href="detail.php?imageProduct=<?php echo $productList[$i]['image'];?> &nameProduct=<?php echo $productList[$i]['name']; ?>  &priceProduct=<?php echo $productList[$i]['price']; ?>">
                                     <div class="w-full px-6 pt-6">
-                                        <img src="./img/Products/<?php echo $productList[$i]['image']?>.jpg" alt="">
+                                        <img src="public/img/Products/<?php echo $productList[$i]['image']?>.jpg" alt="">
                                     </div>
                                 </a>
                                 <div class="px-5 pb-5">
@@ -501,7 +501,7 @@
                 </div>
                 <div class="md:flex grid grid-cols-2 gap-y-5 gap-x-2 md:gap-x-6 mt-5">
                     <div class="group flex-1 relative h-[320px]">
-                        <img class="rounded-lg" src="./img/banner/DOTD_1.png" alt="">
+                        <img class="rounded-lg" src="public/img/banner/DOTD_1.png" alt="">
                         <div class="group-hover:-translate-y-2 w-[95%] md:w-[90%] bg-white px-2 md:px-7 py-6 shadow rounded-lg absolute bottom-0 left-1/2 -translate-x-1/2
                         flex flex-col transition duration-300 ease-in-out">
                             <span class="text-[#253d4e] text-sm md:text-lg h-[55px] font-semibold hover:text-green-500">
@@ -526,7 +526,7 @@
                     </div>
 
                     <div class="group flex-1 relative h-[320px]">
-                        <img class="rounded-lg" src="./img/banner/DOTD_2.png" alt="">
+                        <img class="rounded-lg" src="public/img/banner/DOTD_2.png" alt="">
                         <div class="group-hover:-translate-y-2 w-[95%] md:w-[90%] bg-white px-2 md:px-7 py-6 shadow rounded-lg absolute bottom-0 left-1/2 -translate-x-1/2
                         flex flex-col transition duration-300 ease-in-out">
                             <span class="text-[#253d4e] text-sm md:text-lg h-[55px] font-semibold hover:text-green-500">
@@ -551,7 +551,7 @@
                     </div>
 
                     <div class="group flex-1 relative h-[320px]">
-                        <img class="rounded-lg" src="./img/banner/DOTD_3.png" alt="">
+                        <img class="rounded-lg" src="public/img/banner/DOTD_3.png" alt="">
                         <div class="group-hover:-translate-y-2 w-[95%] md:w-[90%] bg-white px-2 md:px-7 py-6 shadow rounded-lg absolute bottom-0 left-1/2 -translate-x-1/2
                         flex flex-col transition duration-300 ease-in-out">
                             <span class="text-[#253d4e] text-sm md:text-lg h-[55px] font-semibold hover:text-green-500">
@@ -576,7 +576,7 @@
                     </div>
 
                     <div class="group flex-1 relative h-[320px]">
-                        <img class="rounded-lg" src="./img/banner/DOTD_4.png" alt="">
+                        <img class="rounded-lg" src="public/img/banner/DOTD_4.png" alt="">
                         <div class="group-hover:-translate-y-2 w-[95%] md:w-[90%] bg-white px-2 md:px-7 py-6 shadow rounded-lg absolute bottom-0 left-1/2 -translate-x-1/2
                         flex flex-col transition duration-300 ease-in-out">
                             <span class="text-[#253d4e] text-sm md:text-lg h-[55px] font-semibold hover:text-green-500">
@@ -618,7 +618,7 @@
                                 <div class="flex items-center justify-between">
                                     <!-- image -->
                                     <div class="w-20 h-20">
-                                        <img class="w-20 h-20" src="./img/Products/product-3.jpg" alt="">
+                                        <img class="w-20 h-20" src="public/img/Products/product-3.jpg" alt="">
                                     </div>
                                     <!-- info -->
                                     <div class="">
@@ -648,7 +648,7 @@
                                 <div class="flex items-center justify-between">
                                     <!-- image -->
                                     <div class="w-20 h-20">
-                                        <img class="w-20 h-20" src="./img/Products/product-7.jpg" alt="">
+                                        <img class="w-20 h-20" src="public/img/Products/product-7.jpg" alt="">
                                     </div>
                                     <!-- info -->
                                     <div class="">
@@ -678,7 +678,7 @@
                                 <div class="flex items-center justify-between">
                                     <!-- image -->
                                     <div class="w-20 h-20">
-                                        <img class="w-20 h-20" src="./img/Products/product-5.jpg" alt="">
+                                        <img class="w-20 h-20" src="public/img/Products/product-5.jpg" alt="">
                                     </div>
                                     <!-- info -->
                                     <div class="">
@@ -719,7 +719,7 @@
                                 <div class="flex items-center justify-between">
                                     <!-- image -->
                                     <div class="w-20 h-20">
-                                        <img class="w-20 h-20" src="./img/Products/product-1.jpg" alt="">
+                                        <img class="w-20 h-20" src="public/img/Products/product-1.jpg" alt="">
                                     </div>
                                     <!-- info -->
                                     <div class="">
@@ -749,7 +749,7 @@
                                 <div class="flex items-center justify-between">
                                     <!-- image -->
                                     <div class="w-20 h-20">
-                                        <img class="w-20 h-20" src="./img/Products/product-3.jpg" alt="">
+                                        <img class="w-20 h-20" src="public/img/Products/product-3.jpg" alt="">
                                     </div>
                                     <!-- info -->
                                     <div class="">
@@ -779,7 +779,7 @@
                                 <div class="flex items-center justify-between">
                                     <!-- image -->
                                     <div class="w-20 h-20">
-                                        <img class="w-20 h-20" src="./img/Products/product-6.jpg" alt="">
+                                        <img class="w-20 h-20" src="public/img/Products/product-6.jpg" alt="">
                                     </div>
                                     <!-- info -->
                                     <div class="">
@@ -820,7 +820,7 @@
                                 <div class="flex items-center justify-between">
                                     <!-- image -->
                                     <div class="w-20 h-20">
-                                        <img class="w-20 h-20" src="./img/Products/product-2.jpg" alt="">
+                                        <img class="w-20 h-20" src="public/img/Products/product-2.jpg" alt="">
                                     </div>
                                     <!-- info -->
                                     <div class="">
@@ -850,7 +850,7 @@
                                 <div class="flex items-center justify-between">
                                     <!-- image -->
                                     <div class="w-20 h-20">
-                                        <img class="w-20 h-20" src="./img/Products/product-8.jpg" alt="">
+                                        <img class="w-20 h-20" src="public/img/Products/product-8.jpg" alt="">
                                     </div>
                                     <!-- info -->
                                     <div class="">
@@ -880,7 +880,7 @@
                                 <div class="flex items-center justify-between">
                                     <!-- image -->
                                     <div class="w-20 h-20">
-                                        <img class="w-20 h-20" src="./img/Products/product-9.jpg" alt="">
+                                        <img class="w-20 h-20" src="public/img/Products/product-9.jpg" alt="">
                                     </div>
                                     <!-- info -->
                                     <div class="">
@@ -921,7 +921,7 @@
                                 <div class="flex items-center justify-between">
                                     <!-- image -->
                                     <div class="w-20 h-20">
-                                        <img class="w-20 h-20" src="./img/Products/product-4.jpg" alt="">
+                                        <img class="w-20 h-20" src="public/img/Products/product-4.jpg" alt="">
                                     </div>
                                     <!-- info -->
                                     <div class="">
@@ -951,7 +951,7 @@
                                 <div class="flex items-center justify-between">
                                     <!-- image -->
                                     <div class="w-20 h-20">
-                                        <img class="w-20 h-20" src="./img/Products/product-5.jpg" alt="">
+                                        <img class="w-20 h-20" src="public/img/Products/product-5.jpg" alt="">
                                     </div>
                                     <!-- info -->
                                     <div class="">
@@ -981,7 +981,7 @@
                                 <div class="flex items-center justify-between">
                                     <!-- image -->
                                     <div class="w-20 h-20">
-                                        <img class="w-20 h-20" src="./img/Products/product-2.jpg" alt="">
+                                        <img class="w-20 h-20" src="public/img/Products/product-2.jpg" alt="">
                                     </div>
                                     <!-- info -->
                                     <div class="">
@@ -1114,8 +1114,8 @@
         </div>
     </div>
     
-    <script src="./js/swiper-bundle.min.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="public/js/swiper-bundle.min.js"></script>
+    <script src="public/js/main.js"></script>
 </body>
 
 </html>

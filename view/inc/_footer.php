@@ -1,7 +1,7 @@
 <footer class="mt-10">
     <!-- banner -->
     <div class="md:px-[10px]">
-        <div class="w-full h-auto bg-cover bg-no-repeat px-5 md:px-[78px] py-5 md:py-[84px] rounded-2xl" style="background: url(./img/banner/slider-1-min.png);">
+        <div class="w-full h-auto bg-cover bg-no-repeat px-5 md:px-[78px] py-5 md:py-[84px] rounded-2xl" style="background: url(public/img/banner/slider-1-min.png);">
             <div class="mb-5 text-[#7e7e7e]">Stay home & get your daily<br>needs from our shop</div>
             <div class="mb-11 text-[#7e7e7e] text-lg">
                 <p>Start Your Daily Shopping with <span class="text-green-500">Nest Mart</span></p>
@@ -16,7 +16,7 @@
     <div class="block md:grid grid-cols-5 gap-x-5 mt-12 md:px-[10px]">
         <div class="group flex items-center bg-[#f4f6fa] p-5 rounded-xl shadow">
             <div class="group-hover:-translate-y-2 max-w-[60px] transition duration-300 ease-in-out">
-                <img src="./img/icon/icon-f-1.png" alt="icon">
+                <img src="public/img/icon/icon-f-1.png" alt="icon">
             </div>
             <div class="md:px-2 px-5">
                 <div class="text-[#242424] text-xl font-semibold"><a href="#">Best prices & offers</a></div>
@@ -26,7 +26,7 @@
 
         <div class="group flex mt-5 md:mt-0 items-center bg-[#f4f6fa] p-5 rounded-xl shadow">
             <div class="group-hover:-translate-y-2 max-w-[60px] transition duration-300 ease-in-out">
-                <img src="./img/icon/icon-f-2.png" alt="icon">
+                <img src="public/img/icon/icon-f-2.png" alt="icon">
             </div>
             <div class="md:px-2 px-5">
                 <div class="text-[#242424] text-xl font-semibold"><a href="#">Free delivery</a></div>
@@ -36,7 +36,7 @@
 
         <div class="group flex mt-5 md:mt-0 items-center bg-[#f4f6fa] p-5 rounded-xl shadow">
             <div class="group-hover:-translate-y-2 max-w-[60px] transition duration-300 ease-in-out">
-                <img src="./img/icon/icon-f-3.png" alt="icon">
+                <img src="public/img/icon/icon-f-3.png" alt="icon">
             </div>
             <div class="md:px-2 px-5">
                 <div class="text-[#242424] text-xl font-semibold"><a href="#">Grate daily deal</a></div>
@@ -46,7 +46,7 @@
 
         <div class="group flex mt-5 md:mt-0 items-center bg-[#f4f6fa] p-5 rounded-xl shadow">
             <div class="group-hover:-translate-y-2 max-w-[60px] transition duration-300 ease-in-out">
-                <img src="./img/icon/icon-f-4.png" alt="icon">
+                <img src="public/img/icon/icon-f-4.png" alt="icon">
             </div>
             <div class="md:px-2 px-5">
                 <div class="text-[#242424] text-xl font-semibold"><a href="#">Wide assortment</a></div>
@@ -56,7 +56,7 @@
 
         <div class="group flex mt-5 md:mt-0 items-center bg-[#f4f6fa] p-5 rounded-xl shadow">
             <div class="group-hover:-translate-y-2 max-w-[60px] transition duration-300 ease-in-out">
-                <img src="./img/icon/icon-f-5.png" alt="icon">
+                <img src="public/img/icon/icon-f-5.png" alt="icon">
             </div>
             <div class="md:px-2 px-5">
                 <div class="text-[#242424] text-xl font-semibold"><a href="#">Easy returns</a></div>
@@ -69,7 +69,7 @@
     <div class="mt-10">
         <div class="block md:flex md:px-[10px] justify-between gap-x-5">
             <div class="flex-1 text-[#253d4e] text-sm">
-                <div><img src="./img/Logo/logo.png" alt="Logo"></div>
+                <div><img src="public/img/Logo/logo.png" alt="Logo"></div>
                 <div class="text-base mt-5">
                     <p>Awesome grocery store websitetemplate</p>
                 </div>
@@ -170,15 +170,15 @@
                 <div class="mt-5"><span>From App Store or Google Play</span></div>
                 <div class="flex gap-2 mt-3 mb-3">
                     <div class="hover:-translate-y-2 transition duration-300 ease-in-out">
-                        <a href="#"><img src="./img/Apps/google-play.jpg" alt=""></a>
+                        <a href="#"><img src="public/img/Apps/google-play.jpg" alt=""></a>
                     </div>
                     <div class="hover:-translate-y-2 transition duration-300 ease-in-out">
-                        <a href="#"><img src="./img/Apps/app-store.jpg" alt=""></a>
+                        <a href="#"><img src="public/img/Apps/app-store.jpg" alt=""></a>
                     </div>
                 </div>
                 <span>Secured Payment Gateways</span>
                 <div class="mt-3 hover:-translate-y-2 transition duration-300 ease-in-out">
-                    <a href="#"><img src="./img/Apps/payment-method.png" alt=""></a>
+                    <a href="#"><img src="public/img/Apps/payment-method.png" alt=""></a>
                 </div>
             </div>
         </div>

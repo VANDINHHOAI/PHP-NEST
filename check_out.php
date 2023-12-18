@@ -1,5 +1,5 @@
 <?php 
-include_once '../core/db/boot.php';
+include_once 'core/db/boot.php';
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
     if (isset($_POST['firstName']) && isset($_POST['email']) && isset($_POST['phone']) &&  isset($_POST['address'])) {
@@ -64,50 +64,50 @@ if($_SERVER['REQUEST_METHOD'] === 'GET'){
 }
 
 
-function delete(){
-    $cart = $_SESSION['cart'];
-    $rs = array();
+// function delete(){
+//     $cart = $_SESSION['cart'];
+//     $rs = array();
 
-    foreach($cart as $item){
-        if($item['productId'] != $_POST['productId']){
-            array_push($rs, $item);
-        }
-    }
+//     foreach($cart as $item){
+//         if($item['productId'] != $_POST['productId']){
+//             array_push($rs, $item);
+//         }
+//     }
 
-    $_SESSION['cart'] = $rs;
-}
+//     $_SESSION['cart'] = $rs;
+// }
 
 
-function string_random($len = 10){
-    $keys = array_merge(range(0,9), range('a', 'z'));
+// function string_random($len = 10){
+//     $keys = array_merge(range(0,9), range('a', 'z'));
 
-    $key = "";
-    for($i=0; $i < $len; $i++) {
-        $key .= $keys[mt_rand(0, count($keys) - 1)];
-    }
-    return $key;
-}
+//     $key = "";
+//     for($i=0; $i < $len; $i++) {
+//         $key .= $keys[mt_rand(0, count($keys) - 1)];
+//     }
+//     return $key;
+// }
 
 function get_last_inserted_order_id() {
     global $pdo; // Biến PDO cần được khai báo ở đây, thay thế bằng biến PDO của bạn
     return $pdo->lastInsertId();
 }
 
-function total_cart(){
-    $cart = $_SESSION['cart'];
-    $total = 0;
-    foreach ($cart as $item) {
-        $total += $item['productPrice'] * $item['quantity'];
-    }
-    return number_format($total, 0, '', ',');
-}
+// function total_cart(){
+//     $cart = $_SESSION['cart'];
+//     $total = 0;
+//     foreach ($cart as $item) {
+//         $total += $item['productPrice'] * $item['quantity'];
+//     }
+//     return number_format($total, 0, '', ',');
+// }
 
-function number_cart_product(){
-    $cart = $_SESSION['cart'];
-    $number = 0;
-    foreach ($cart as $order_detail) {
-        $number += $order_detail['quantity'];
-    }
-    return $number;
-}
+// function number_cart_product(){
+//     $cart = $_SESSION['cart'];
+//     $number = 0;
+//     foreach ($cart as $order_detail) {
+//         $number += $order_detail['quantity'];
+//     }
+//     return $number;
+// }
 ?>

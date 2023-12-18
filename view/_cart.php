@@ -7,7 +7,7 @@
     <title>Cart - Nest</title>
     <link rel="stylesheet" href="../public/css/output.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="shortcut icon" href="./img/Logo/logo-tap.png" type="image/x-icon">
+    <link rel="shortcut icon" href="public/img/Logo/logo-tap.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -57,7 +57,7 @@
                         <?php if (!empty($_SESSION['cart'])) { ?>
                             <?php foreach ($_SESSION['cart'] as $item) { ?>
                                 <div class="flex items-center gap-x-5 p-2">
-                                    <div class="img w-20 h-20"><img src="./img/Products/<?php echo $item['productImage']; ?>" alt="product"></div>
+                                    <div class="img w-20 h-20"><img src="public/img/Products/<?php echo $item['productImage']; ?>" alt="product"></div>
                                     <div class="info text-[#253d4e]">
                                         <div class="product-name font-semibold"><?php echo $item['productName'] ?></div>
                                         <div class="price mt-3">$<?php echo $item['productPrice'] ?></div>
@@ -120,7 +120,7 @@
         <!-- container -->
         <div class="md:px-[10px]">
             <div class="w-full">
-                <div class="py-20 md:px-20 mt-10 rounded-2xl" style="background: url(./img/banner/banner-10-min.png);">
+                <div class="py-20 md:px-20 mt-10 rounded-2xl" style="background: url(public/img/banner/banner-10-min.png);">
                     <div class="flex items-center justify-between">
                         <h1 class="w-full md:w-auto text-center text-5xl text-[#253d4e] font-semibold">Shop Cart</h1>
                         <ul class="hidden md:flex flex-wrap items-center text-lg text-[#3bb77e] font-semibold ml-20 gap-x-7">
@@ -161,7 +161,7 @@
                                             </form>
 
                                             <div class="w-full md:w-auto border-t md:border-none p-2 md:p-0">
-                                                <img class="w-20 h-20" src="./img/Products/<?php echo $item['productImage']; ?>" alt="">
+                                                <img class="w-20 h-20" src="public/img/Products/<?php echo $item['productImage']; ?>" alt="">
                                             </div>
 
                                             <div class="p-2 md:p-0 border-t md:border-none font-semibold">
@@ -278,7 +278,7 @@
                     <div class="text-2xl text-[#253d4e]">Recently Viewd Products</div>
                     <div class="group p-[15px] inline-block mt-3 border-dashed border-2 rounded-md">
                         <div class="group-hover:-translate-y-2 flex items-center transition duration-300 ease-in-out">
-                            <div class="w-20 h-20"><img src="./img/Products/product-1.jpg" alt=""></div>
+                            <div class="w-20 h-20"><img src="public/img/Products/product-1.jpg" alt=""></div>
                             <div>
                                 <h2 class="text-[#253d4e] text-base font-semibold hover:text-[#3bb77e]"><a href="#">Haagen Caramel Cone Ice Cream Boxed</a></h2>
                                 <div class="text-yellow-500 flex items-center mt-3 gap-x-2">

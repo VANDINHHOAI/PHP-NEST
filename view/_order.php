@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/css/output.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="shortcut icon" href="./img/Logo/logo-tap.png" type="image/x-icon">
+    <link rel="shortcut icon" href="public/img/Logo/logo-tap.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>My Order</title>
 </head>
@@ -68,7 +68,7 @@
         <!-- container -->
         <div class="md:px-[10px]">
             <div class="w-full">
-                <div class="py-20 md:px-20 mt-10 rounded-2xl" style="background: url(./img/banner/banner-10-min.png);">
+                <div class="py-20 md:px-20 mt-10 rounded-2xl" style="background: url(public/img/banner/banner-10-min.png);">
                     <div class="text-center">
                         <h1 class="w-full md:w-auto text-center text-5xl text-[#253d4e] font-semibold">My order</h1>
                     </div>

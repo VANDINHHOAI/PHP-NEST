@@ -106,3 +106,21 @@ function update_product($product){
 
     $stmt->execute();
 }
+
+function get_search_products($search){
+    global $pdo;
+
+    $sql = "SELECT * FROM product WHERE name LIKE :search";
+    $stmt = $pdo->prepare($sql);
+
+    // Sử dụng bindValue thay vì bindParam để tránh lỗi
+    $stmt->bindValue(':search', "%$search%", PDO::PARAM_STR);
+
+    $stmt->execute();
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+
+    // Lấy danh sách kết quả
+    $result = $stmt->fetchAll();
+
+    return $result;
+}

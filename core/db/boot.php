@@ -9,3 +9,5 @@ require_once 'db_category.php';
 require_once 'db_orders.php';
 require_once 'db_order_items.php';
 require_once 'db_users.php';
+require_once 'db_staff.php';
+require_once 'functions.php';

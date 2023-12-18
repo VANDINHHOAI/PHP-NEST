@@ -7,7 +7,7 @@
     <title>My account - Nest</title>
     <link rel="stylesheet" href="../public/css/output.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="shortcut icon" href="./img/Logo/logo-tap.png" type="image/x-icon">
+    <link rel="shortcut icon" href="public/img/Logo/logo-tap.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 

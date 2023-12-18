@@ -7,7 +7,7 @@
     <title>Product detail</title>
     <link rel="stylesheet" href="../public/css/output.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="shortcut icon" href="./img/Logo/logo-tap.png" type="image/x-icon">
+    <link rel="shortcut icon" href="public/img/Logo/logo-tap.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -75,7 +75,7 @@
                             <div class="w-full md:w-[40%] bg-white h-auto md:px-3">
                                 <div class="flex items-center justify-center rounded-2xl border overflow-hidden">
                                     <div class="slider-show" id="product-image">
-                                        <img src="./img/Products/<?php echo $product['image'] . ".jpg"?>" alt="product">
+                                        <img src="public/img/Products/<?php echo $product['image'] . ".jpg" ?>" alt="product">
                                     </div>
                                 </div>
                             </div>
@@ -99,7 +99,7 @@
                                         <span id="price_old" class="text-lg text-green-300 line-through"><?php echo $product['price']; ?></span>
                                         <span id="product-price" class="text-xl font-semibold text-[#3bb77e] underline">$22.85</span>
                                     </div>
-                                    <p class="mt-5 mb-5 text-[#7e7e7e]"><?php echo $product['description'];?></p>
+                                    <p class="mt-5 mb-5 text-[#7e7e7e]"><?php echo $product['description']; ?></p>
                                     <span class="text-[#b3af54]">26 in stock</span>
 
                                     <form action="cart.php" method="post" class="flex items-center mt-5">
@@ -303,7 +303,7 @@
                                 <div class="group mt-5 md:mt-0 border rounded-md hover:border-green-500 hover:shadow hover:scale-[1.01]
                         transition duration-300 ease-in-out cursor-pointer relative">
                                     <div class="w-full px-6 pt-6">
-                                        <img src="./img/Products/product-10.jpg" alt="">
+                                        <img src="public/img/Products/product-10.jpg" alt="">
                                     </div>
 
                                     <div class="px-5 pb-5">
@@ -347,7 +347,7 @@
                                 <div class="group mt-5 md:mt-0 border rounded-md hover:border-green-500 hover:shadow hover:scale-[1.01]
                         transition duration-300 ease-in-out cursor-pointer relative">
                                     <div class="w-full px-6 pt-6">
-                                        <img src="./img/Products/product-9.jpg" alt="">
+                                        <img src="public/img/Products/product-9.jpg" alt="">
                                     </div>
 
                                     <div class="px-5 pb-5">
@@ -391,7 +391,7 @@
                                 <div class="group mt-5 md:mt-0 border rounded-md hover:border-green-500 hover:shadow hover:scale-[1.01]
                         transition duration-300 ease-in-out cursor-pointer relative">
                                     <div class="w-full px-6 pt-6">
-                                        <img src="./img/Products/product-8.jpg" alt="">
+                                        <img src="public/img/Products/product-8.jpg" alt="">
                                     </div>
 
                                     <div class="px-5 pb-5">
@@ -445,55 +445,55 @@
 
                     <div class="mt-8">
                         <div class="flex items-center gap-2 py-[9px] pl-[10px] pr-[67px] border rounded relative cursor-pointer">
-                            <div class="w-[30px] h-[30px]"><img class="object-cover" src="./img/icon/icon-f-1.png" alt=""></div>
+                            <div class="w-[30px] h-[30px]"><img class="object-cover" src="public/img/icon/icon-f-1.png" alt=""></div>
                             <div class="text-[#253d4e]">Baking material</div>
                             <div class="w-6 h-6 bg-[#bce3c9] text-center text-[#253d4e] rounded-full absolute top-3 right-3">7</div>
                         </div>
 
                         <div class="flex items-center gap-2 mt-3 py-[9px] pl-[10px] pr-[67px] border rounded relative cursor-pointer">
-                            <div class="w-[30px] h-[30px]"><img class="object-cover" src="./img/icon/icon-f-1.png" alt=""></div>
+                            <div class="w-[30px] h-[30px]"><img class="object-cover" src="public/img/icon/icon-f-1.png" alt=""></div>
                             <div class="text-[#253d4e]">Baking material</div>
                             <div class="w-6 h-6 bg-[#bce3c9] text-center text-[#253d4e] rounded-full absolute top-3 right-3">7</div>
                         </div>
 
                         <div class="flex items-center gap-2 mt-3 py-[9px] pl-[10px] pr-[67px] border rounded relative cursor-pointer">
-                            <div class="w-[30px] h-[30px]"><img class="object-cover" src="./img/icon/icon-f-1.png" alt=""></div>
+                            <div class="w-[30px] h-[30px]"><img class="object-cover" src="public/img/icon/icon-f-1.png" alt=""></div>
                             <div class="text-[#253d4e]">Baking material</div>
                             <div class="w-6 h-6 bg-[#bce3c9] text-center text-[#253d4e] rounded-full absolute top-3 right-3">7</div>
                         </div>
 
                         <div class="flex items-center gap-2 mt-3 py-[9px] pl-[10px] pr-[67px] border rounded relative cursor-pointer">
-                            <div class="w-[30px] h-[30px]"><img class="object-cover" src="./img/icon/icon-f-1.png" alt=""></div>
+                            <div class="w-[30px] h-[30px]"><img class="object-cover" src="public/img/icon/icon-f-1.png" alt=""></div>
                             <div class="text-[#253d4e]">Baking material</div>
                             <div class="w-6 h-6 bg-[#bce3c9] text-center text-[#253d4e] rounded-full absolute top-3 right-3">7</div>
                         </div>
 
                         <div class="flex items-center gap-2 mt-3 py-[9px] pl-[10px] pr-[67px] border rounded relative cursor-pointer">
-                            <div class="w-[30px] h-[30px]"><img class="object-cover" src="./img/icon/icon-f-1.png" alt=""></div>
+                            <div class="w-[30px] h-[30px]"><img class="object-cover" src="public/img/icon/icon-f-1.png" alt=""></div>
                             <div class="text-[#253d4e]">Baking material</div>
                             <div class="w-6 h-6 bg-[#bce3c9] text-center text-[#253d4e] rounded-full absolute top-3 right-3">7</div>
                         </div>
 
                         <div class="flex items-center gap-2 mt-3 py-[9px] pl-[10px] pr-[67px] border rounded relative cursor-pointer">
-                            <div class="w-[30px] h-[30px]"><img class="object-cover" src="./img/icon/icon-f-1.png" alt=""></div>
+                            <div class="w-[30px] h-[30px]"><img class="object-cover" src="public/img/icon/icon-f-1.png" alt=""></div>
                             <div class="text-[#253d4e]">Baking material</div>
                             <div class="w-6 h-6 bg-[#bce3c9] text-center text-[#253d4e] rounded-full absolute top-3 right-3">7</div>
                         </div>
 
                         <div class="flex items-center gap-2 mt-3 py-[9px] pl-[10px] pr-[67px] border rounded relative cursor-pointer">
-                            <div class="w-[30px] h-[30px]"><img class="object-cover" src="./img/icon/icon-f-1.png" alt=""></div>
+                            <div class="w-[30px] h-[30px]"><img class="object-cover" src="public/img/icon/icon-f-1.png" alt=""></div>
                             <div class="text-[#253d4e]">Baking material</div>
                             <div class="w-6 h-6 bg-[#bce3c9] text-center text-[#253d4e] rounded-full absolute top-3 right-3">7</div>
                         </div>
 
                         <div class="flex items-center gap-2 mt-3 py-[9px] pl-[10px] pr-[67px] border rounded relative cursor-pointer">
-                            <div class="w-[30px] h-[30px]"><img class="object-cover" src="./img/icon/icon-f-1.png" alt=""></div>
+                            <div class="w-[30px] h-[30px]"><img class="object-cover" src="public/img/icon/icon-f-1.png" alt=""></div>
                             <div class="text-[#253d4e]">Baking material</div>
                             <div class="w-6 h-6 bg-[#bce3c9] text-center text-[#253d4e] rounded-full absolute top-3 right-3">7</div>
                         </div>
 
                         <div class="flex items-center gap-2 mt-3 py-[9px] pl-[10px] pr-[67px] border rounded relative cursor-pointer">
-                            <div class="w-[30px] h-[30px]"><img class="object-cover" src="./img/icon/icon-f-1.png" alt=""></div>
+                            <div class="w-[30px] h-[30px]"><img class="object-cover" src="public/img/icon/icon-f-1.png" alt=""></div>
                             <div class="text-[#253d4e]">Baking material</div>
                             <div class="w-6 h-6 bg-[#bce3c9] text-center text-[#253d4e] rounded-full absolute top-3 right-3">7</div>
                         </div>
@@ -510,7 +510,7 @@
                     <div class="flex flex-wrap gap-3 mt-5">
                         <div class="group flex items-center bg-white px-2 py-1 border rounded-full shadow hover:-translate-y-2
                         transition-all duration-300 ease-in-out cursor-pointer">
-                            <i class='bx bx-x text-2xl text-[#7e7e7e]'></i> 
+                            <i class='bx bx-x text-2xl text-[#7e7e7e]'></i>
                             <Span class="text-[#3bb77e] font-semibold group-hover:text-red-500">Brown</Span>
                         </div>
 
@@ -554,7 +554,7 @@
 
                     <div class="mt-8">
                         <div class="flex items-center mt-3 gap-2 py-[9px] px-3 rounded cursor-pointer">
-                            <div class="w-[50px] h-[50px]"><img class="w-full h-full object-cover" src="./img/Products/product-1.jpg" alt=""></div>
+                            <div class="w-[50px] h-[50px]"><img class="w-full h-full object-cover" src="public/img/Products/product-1.jpg" alt=""></div>
                             <div>
                                 <div class="text-[#253d4e] font-semibold"><a href="#">Organic Cage Grade A Large Eggs</a></div>
                                 <div class="mt-2">
@@ -565,7 +565,7 @@
                         </div>
 
                         <div class="flex items-center mt-3 gap-2 py-[9px] px-3 rounded cursor-pointer">
-                            <div class="w-[50px] h-[50px]"><img class="w-full h-full object-cover" src="./img/Products/product-2.jpg" alt=""></div>
+                            <div class="w-[50px] h-[50px]"><img class="w-full h-full object-cover" src="public/img/Products/product-2.jpg" alt=""></div>
                             <div>
                                 <div class="text-[#253d4e] font-semibold"><a href="#">Organic Cage Grade A Large Eggs</a></div>
                                 <div class="mt-2">
@@ -576,7 +576,7 @@
                         </div>
 
                         <div class="flex items-center mt-3 gap-2 py-[9px] px-3 rounded cursor-pointer">
-                            <div class="w-[50px] h-[50px]"><img class="w-full h-full object-cover" src="./img/Products/product-3.jpg" alt=""></div>
+                            <div class="w-[50px] h-[50px]"><img class="w-full h-full object-cover" src="public/img/Products/product-3.jpg" alt=""></div>
                             <div>
                                 <div class="text-[#253d4e] font-semibold"><a href="#">Organic Cage Grade A Large Eggs</a></div>
                                 <div class="mt-2">
@@ -587,7 +587,7 @@
                         </div>
 
                         <div class="flex items-center mt-3 gap-2 py-[9px] px-3 rounded cursor-pointer">
-                            <div class="w-[50px] h-[50px]"><img class="w-full h-full object-cover" src="./img/Products/product-4.jpg" alt=""></div>
+                            <div class="w-[50px] h-[50px]"><img class="w-full h-full object-cover" src="public/img/Products/product-4.jpg" alt=""></div>
                             <div>
                                 <div class="text-[#253d4e] font-semibold"><a href="#">Organic Cage Grade A Large Eggs</a></div>
                                 <div class="mt-2">
@@ -598,7 +598,7 @@
                         </div>
 
                         <div class="flex items-center mt-3 gap-2 py-[9px] px-3 rounded cursor-pointer">
-                            <div class="w-[50px] h-[50px]"><img class="w-full h-full object-cover" src="./img/Products/product-5.jpg" alt=""></div>
+                            <div class="w-[50px] h-[50px]"><img class="w-full h-full object-cover" src="public/img/Products/product-5.jpg" alt=""></div>
                             <div>
                                 <div class="text-[#253d4e] font-semibold"><a href="#">Organic Cage Grade A Large Eggs</a></div>
                                 <div class="mt-2">
@@ -612,7 +612,7 @@
 
                 <div class="w-full h-auto relative mt-12">
                     <div>
-                        <img class="object-cover rounded-2xl" src="./img/banner/banner-11-min.png" alt="">
+                        <img class="object-cover rounded-2xl" src="public/img/banner/banner-11-min.png" alt="">
                     </div>
                     <div class="absolute top-16 left-0 px-8">
                         <span class="text-[#7e7e7e]">Organic</span>
@@ -631,7 +631,7 @@
                 </button>
     </div>
 
-    <script src="./js/detail.js"></script>
+    <script src="public/js/detail.js"></script>
 </body>
 
 </html>

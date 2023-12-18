@@ -109,15 +109,18 @@
                                         <th>Salary</th>
                                     </tr>
                                 </tfoot>
+
                                 <tbody>
-                                    <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>System Architect</td>
-                                        <td>Edinburgh</td>
-                                        <td>61</td>
-                                        <td>2011/04/25</td>
-                                        <td>$320,800</td>
-                                    </tr>
+                                    <?php foreach ($staff as $item) { ?>
+                                        <tr>
+                                            <td><?php echo $item['name']; ?></td>
+                                            <td><?php echo $item['position']; ?></td>
+                                            <td><?php echo $item['office']; ?></td>
+                                            <td><?php echo $item['age']; ?></td>
+                                            <td><?php echo $item['starDate']; ?></td>
+                                            <td>$<?php echo $item['salary']; ?></td>
+                                        </tr>
+                                    <?php } ?>
                                 </tbody>
                             </table>
                         </div>

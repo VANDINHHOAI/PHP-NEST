@@ -1,5 +1,5 @@
 <?php 
-include_once '../core/db/boot.php';
+include_once 'core/db/boot.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $is_register_success = true;

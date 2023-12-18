@@ -1,7 +1,7 @@
 <div>
     <!-- Header-mobile -->
     <div class="w-full h-auto px-9 py-3 text-center font-semibold text-[#253d4e] rounded-md
-                md:hidden" style="background: url(./img/banner/banner_mobile.jpg);">
+                md:hidden" style="background: url(public/img/banner/banner_mobile.jpg);">
         <h3>Senior's Member Discount Days! Save 25% Each Tuesday</h3>
     </div>
 
@@ -47,7 +47,7 @@
                 <div class="flex items-center justify-between">
                     <!-- Logo -->
                     <div class="w-32 md:w-44">
-                        <a href="index.php"><img src="./img/Logo/logo.png" alt="Logo"></a>
+                        <a href="index.php"><img src="public/img/Logo/logo.png" alt="Logo"></a>
                     </div>
 
                     <div class="md:hidden text-3xl">
@@ -59,13 +59,15 @@
                 </div>
 
                 <!-- Search -->
-                <div class="mt-4 md:mt-0 md:w-[438px] flex justify-between border md:border-2 border-[#3bb77e] p-1 rounded text-sm">
-                    <input id="productInput" class="w-full outline-none px-5" type="text" placeholder="Search for products...">
-                    <button id="searchBtn" class="bg-[#3bb77e] px-5 py-2 h-full rounded text-white font-semibold hover:bg-yellow-400
-                                transition duration-200 ease-in">
-                        <a href="#">Search</a>
-                    </button>
-                </div>
+                <form action="shop.php" method="get">
+                    <div class="mt-4 md:mt-0 md:w-[438px] flex justify-between border md:border-2 border-[#3bb77e] p-1 rounded text-sm">
+                        <input id="productInput" name="search" class="w-full outline-none px-5" type="text" placeholder="Search for products...">
+                        <button id="searchBtn" type="submit" class="bg-[#3bb77e] px-5 py-2 h-full rounded text-white font-semibold hover:bg-yellow-400
+                                    transition duration-200 ease-in">
+                            Search
+                        </button>
+                    </div>
+                </form>
 
                 <!-- Other button -->
                 <div class="md:flex items-center border py-2 px-4 hover:translate-x-2 transition duration-500 ease-in-out text-[#3bb77e] shadow-md
@@ -101,7 +103,7 @@
                                 <ul class="w-52 bg-white absolute hidden group-hover:block text-base top-full right-0 text-center border shadow-md rounded
                                      text-green-500 font-semibold z-10">
                                     <li class="hover:bg-yellow-400 hover:text-white p-3 border-b cursor-pointer"><a href="#"><?php echo $_SESSION['email'] ?></a></li>                               
-                                    <li class="hover:bg-yellow-400 hover:text-white p-3 border-b cursor-pointer"><a href="../admin/index.php">Admin</li>                               
+                                    <li class="hover:bg-yellow-400 hover:text-white p-3 border-b cursor-pointer"><a href="admin/index.php">Admin</li>                               
                                     <li class="hover:bg-yellow-400 hover:text-white p-3 border-b cursor-pointer"><a href="logout.php">Log out</a></li>
                                     <li class="hover:bg-yellow-400 hover:text-white p-3 border-b cursor-pointer"><a href="order.php">My order</a></li>
                                 </ul>
@@ -259,7 +261,7 @@
                             </div>
                             <div class="w-80 h-auto bg-white relative rounded-xl overflow-hidden">
                                 <div class="w-full h-full">
-                                    <img class="w-full h-full object-cover" src="./img/banner/banner-14-min.png" alt="">
+                                    <img class="w-full h-full object-cover" src="public/img/banner/banner-14-min.png" alt="">
                                 </div>
                                 <div class="absolute top-24 left-5 right-5">
                                     <span class="my-5 text-[#3bb77e] font-semibold">Oganic</span>
@@ -327,7 +329,7 @@
 
                             <div class="w-80 h-auto bg-white relative rounded-xl overflow-hidden">
                                 <div class="w-full h-full">
-                                    <img class="w-full h-full object-cover" src="./img/banner/banner-14-min.png" alt="">
+                                    <img class="w-full h-full object-cover" src="public/img/banner/banner-14-min.png" alt="">
                                 </div>
                                 <div class="absolute bottom-0 left-5 right-5">
                                     <span class="my-5 text-[#3bb77e] font-semibold">Oganic</span>
