@@ -10,6 +10,7 @@
     <title>Dashboard - SB Admin</title>
     <link rel="shortcut icon" href="../../../public/media/img/logo.png" type="image/x-icon">
     <link href="../public/admin/css/style.css" rel="stylesheet" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="../public/admin/js/all.js" crossorigin="anonymous"></script>
 </head>
 
@@ -25,27 +26,46 @@
                         <li class="breadcrumb-item active">Dashboard</li>
                     </ol>
                     <div class="row">
+                        <?php $quantity = 0 ?>
+                        <?php foreach ($productList as $cart) { ?>
+                        <?php $quantity += $cart['quantity'];
+                        } ?>
                         <div class="col-xl-3 col-md-6">
                             <div class="card bg-primary text-white mb-4">
-                                <div class="card-body">Primary Card</div>
+                                <div class="card-body d-flex fs-1 w-100 gap-1 align-items-center justify-content-center">
+                                    <?php echo $quantity ?>
+                                    <i class='bx bx-package fs-1'></i>
+                                </div>
+                                <div class="title w-100 text-center fw-bold">PRODUCTS</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">View Details</a>
+                                    <a class="small text-white stretched-link" href="../admin/products/index.php">View Details</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-xl-3 col-md-6">
                             <div class="card bg-warning text-white mb-4">
-                                <div class="card-body">Warning Card</div>
+                                <?php foreach ($customers as $customersUser) { ?>
+                                    <div class="card-body d-flex fs-1 w-100 gap-1 align-items-center justify-content-center">
+                                        <?php echo $customersUser['user'] ?>
+                                        <i class='bx bx-user' ></i>
+                                    </div>
+                                <?php  } ?>
+                                <div class="title w-100 text-center fw-bold">CUSTOMERS</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">View Details</a>
+                                    <a class="small text-white stretched-link" href="../admin/users/index.php">View Details</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xl-3 col-md-6">
                             <div class="card bg-success text-white mb-4">
-                                <div class="card-body">Success Card</div>
+                                <div class="card-body d-flex fs-1 w-100 gap-1 align-items-center justify-content-center">
+                                    520
+                                    <i class='bx bx-conversation' ></i>
+                                </div>
+                                <div class="title w-100 text-center fw-bold">COMMENTS</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
                                     <a class="small text-white stretched-link" href="#">View Details</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -54,7 +74,11 @@
                         </div>
                         <div class="col-xl-3 col-md-6">
                             <div class="card bg-danger text-white mb-4">
-                                <div class="card-body">Danger Card</div>
+                                <div class="card-body d-flex fs-1 w-100 gap-1 align-items-center justify-content-center">
+                                    25.2k
+                                    <i class='bx bx-search-alt-2'></i>
+                                </div>
+                                <div class="title w-100 text-center fw-bold">PAGE VIEWS</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
                                     <a class="small text-white stretched-link" href="#">View Details</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -67,7 +91,7 @@
                             <div class="card mb-4">
                                 <div class="card-header">
                                     <i class="fas fa-chart-area me-1"></i>
-                                    Area Chart Example
+                                    Sales
                                 </div>
                                 <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
                             </div>
@@ -76,7 +100,7 @@
                             <div class="card mb-4">
                                 <div class="card-header">
                                     <i class="fas fa-chart-bar me-1"></i>
-                                    Bar Chart Example
+                                    Categories sale
                                 </div>
                                 <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
                             </div>

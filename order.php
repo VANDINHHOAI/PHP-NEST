@@ -15,13 +15,4 @@ if($_SERVER['REQUEST_METHOD'] === 'GET'){
     }
 }
 
-
-// function number_cart_product(){
-//     $cart = $_SESSION['cart'];
-//     $number = 0;
-//     foreach ($cart as $order_detail) {
-//         $number += $order_detail['quantity'];
-//     }
-//     return $number;
-// }
 ?>

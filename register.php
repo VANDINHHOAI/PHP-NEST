@@ -4,7 +4,10 @@ include_once 'core/db/boot.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $is_register_success = true;
 
-    if(isset($_POST['email']) && !empty(trim($_POST['email'])) && isset($_POST['password']) && !empty(trim($_POST['password']))){
+    if(isset($_POST['email']) && !empty(trim($_POST['email'])) 
+    && isset($_POST['password']) && !empty(trim($_POST['password'])) 
+    && isset($_POST['cpassword']) && !empty(trim($_POST['cpassword']))
+    && $_POST['password'] == $_POST['cpassword']){
         $user = register($_POST['email'], $_POST['password']);  
         if($user == false){
             $_SESSION['flash_message'] = 'User already exist!';

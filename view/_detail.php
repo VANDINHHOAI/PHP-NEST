@@ -239,7 +239,7 @@
                                     <h2>1 review for Haagen Caramel Cone Ice Cream Boxed</h2>
                                 </div>
                                 <div class="md:flex items-center">
-                                    <div class="flex items-center justify-center mb-5 md:mb-0"><img class="rounded-full" src="./img/User/client-1.png" alt=""></div>
+                                    <div class="flex items-center justify-center mb-5 md:mb-0"><img class="rounded-full" src="public/img/User/client-1.png" alt=""></div>
                                     <div class="w-full p-4 md:ml-2 flex items-center justify-between border">
                                         <p class="">
                                             <strong class="text-[#253d4e] text-lg font-semibold">Barbara Cartland</strong>

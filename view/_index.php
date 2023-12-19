@@ -153,9 +153,9 @@
                 <!-- Container -->
                 <div id="container" class="mt-5">
                     <!-- Slider-container -->
-                    <div class="w-full overflow-hidden swiper featured__swiper">
-                        <div class="flex w-full gap-x-5 swiper-wrapper">
-                            <div class="group swiper-slide flex-1 py-5 bg-[#f2fce4] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
+                    <div class="w-full overflow-hidden">
+                        <div class="flex w-full gap-x-5">
+                            <div class="group flex-1 py-5 bg-[#f2fce4] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
                                 <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="public/img/Feature_categories-img/cat-1.png" alt="Categories">
 
                                 <div class="text-center flex flex-col">
@@ -164,7 +164,7 @@
                                 </div>
                             </div>
 
-                            <div class="group swiper-slide flex-1 py-5 bg-[#fffceb] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
+                            <div class="group flex-1 py-5 bg-[#fffceb] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
                                 <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="public/img/Feature_categories-img/cat-2.png" alt="Categories">
 
                                 <div class="text-center flex flex-col">
@@ -173,7 +173,7 @@
                                 </div>
                             </div>
 
-                            <div class="group swiper-slide flex-1 py-5 bg-[#ecffec] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
+                            <div class="group flex-1 py-5 bg-[#ecffec] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
                                 <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="public/img/Feature_categories-img/cat-3.png" alt="Categories">
 
                                 <div class="text-center flex flex-col">
@@ -182,7 +182,7 @@
                                 </div>
                             </div>
 
-                            <div class="group swiper-slide flex-1 py-5 bg-[#feefea] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
+                            <div class="group flex-1 py-5 bg-[#feefea] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
                                 <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="public/img/Feature_categories-img/cat-4.png" alt="Categories">
 
                                 <div class="text-center flex flex-col">
@@ -191,7 +191,7 @@
                                 </div>
                             </div>
 
-                            <div class="group swiper-slide flex-1 py-5 bg-[#fff3eb] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
+                            <div class="group flex-1 py-5 bg-[#fff3eb] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
                                 <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="public/img/Feature_categories-img/cat-5.png" alt="Categories">
 
                                 <div class="text-center flex flex-col">
@@ -200,7 +200,7 @@
                                 </div>
                             </div>
 
-                            <div class="group swiper-slide flex-1 py-5 bg-[#fff3ff] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
+                            <div class="group flex-1 py-5 bg-[#fff3ff] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
                                 <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="public/img/Feature_categories-img/cat-6.png" alt="Categories">
 
                                 <div class="text-center flex flex-col">
@@ -209,7 +209,7 @@
                                 </div>
                             </div>
 
-                            <div class="group swiper-slide flex-1 py-5 bg-[#f2fce4] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
+                            <div class="group flex-1 py-5 bg-[#f2fce4] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
                                 <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="public/img/Feature_categories-img/cat-7.png" alt="Categories">
 
                                 <div class="text-center flex flex-col">
@@ -218,7 +218,7 @@
                                 </div>
                             </div>
 
-                            <div class="group swiper-slide flex-1 py-5 bg-[#feefea] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
+                            <div class="group flex-1 py-5 bg-[#feefea] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
                                 <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="public/img/Feature_categories-img/cat-8.png" alt="Categories">
 
                                 <div class="text-center flex flex-col">
@@ -227,7 +227,7 @@
                                 </div>
                             </div>
 
-                            <div class="group swiper-slide flex-1 py-5 bg-[#f2fce4] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
+                            <div class="group flex-1 py-5 bg-[#f2fce4] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
                                 <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="public/img/Feature_categories-img/cat-9.png" alt="Categories">
 
                                 <div class="text-center flex flex-col">
@@ -236,7 +236,7 @@
                                 </div>
                             </div>
 
-                            <div class="group swiper-slide flex-1 py-5 bg-[#feefea] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
+                            <div class="group flex-1 py-5 bg-[#feefea] rounded-xl hover:scale-105 cursor-pointer transition duration-500">
                                 <img class="w-[80px] m-auto mb-5 hover:scale-105 transition duration-500" src="public/img/Feature_categories-img/cat-10.png" alt="Categories">
 
                                 <div class="text-center flex flex-col">
