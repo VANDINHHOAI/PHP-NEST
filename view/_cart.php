@@ -178,14 +178,26 @@
 
                                             <div class="p-2 md:p-0 border-t md:border-none">
                                                 <h1 class="md:hidden text-[#253d4e] text-lg font-semibold">Quantity</h1>
-                                                <div class="bg-white inline-block px-2 md:ml-[78px] border-2 border-[#3bb77e] rounded-md overflow-hidden">
-                                                    <div class="flex items-center ">
-                                                        <input type="text" class="w-12 h-auto outline-none border-none text-center text-[#3bb77e] font-semibold" id="inputField" value="<?php echo $item['quantity']; ?>">
-                                                        <div class="flex flex-col text-lg text-[#3bb77e] font-semibold">
-                                                            <button id="increaseBtn"><i class='bx bx-chevron-up'></i></button>
-                                                            <button id="decreaseBtn"><i class='bx bx-chevron-down'></i></button>
+                                                <div class="bg-white inline-block px-2 md:ml-[78px] border-2 border-[#3bb77e] rounded-md overflow-hidden">                                                   
+                                                        <div class="flex items-center ">
+                                                            <input name="quantityUpdate" type="text" class="w-12 h-auto outline-none border-none text-center text-[#3bb77e] font-semibold" id="inputField" value="<?php echo $item['quantity']; ?>">
+                                                            <div class="flex flex-col text-lg text-[#3bb77e] font-semibold">
+                                                                <form action="cart.php" method="post">
+                                                                    <input type="hidden" name="_method" value="update">
+                                                                    <input type="hidden" name="value" value="1">
+                                                                    <input type="hidden" name="productId" value="<?php echo $item['productId']; ?>">
+                                                                    <button type="submit" id="increaseBtn"><i class='bx bx-chevron-up'></i></button>
+                                                                </form>
+
+                                                                <form action="cart.php" method="post">
+                                                                    <input type="hidden" name="_method" value="update">
+                                                                    <input type="hidden" name="value" value="-1">
+                                                                    <input type="hidden" name="productId" value="<?php echo $item['productId']; ?>">
+                                                                    <button type="submit" id="decreaseBtn"><i class='bx bx-chevron-down'></i></button>
+                                                                </form>
+                                                            </div>
                                                         </div>
-                                                    </div>
+                                                    
                                                 </div>
                                             </div>
 
@@ -344,27 +356,6 @@
             cart.classList.add("cart-active");
         })
     };
-
-
-    // Update value quantity product
-    var inputField = document.getElementById('inputField');
-    var decreaseBtn = document.getElementById('decreaseBtn');
-    var increaseBtn = document.getElementById('increaseBtn');
-
-    decreaseBtn.addEventListener('click', function() {
-        var currentValue = parseInt(inputField.value);
-        if (!isNaN(currentValue)) {
-            inputField.value = currentValue - 1;
-        }
-    });
-
-    increaseBtn.addEventListener('click', function() {
-        var currentValue = parseInt(inputField.value);
-
-        if (!isNaN(currentValue)) {
-            inputField.value = currentValue + 1;
-        }
-    });
 </script>
 
 </html>

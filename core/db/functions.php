@@ -54,25 +54,21 @@ function delete()
     $_SESSION['cart'] = $rs;
 }
 
-function update()
+function update_to_cart($product_id, $increment)
 {
-    if (isset($_POST['productId']) && isset($_POST['quantityUpdate'])) {
-        if ($_POST['quantityUpdate'] > 0) {
-            $productId = $_POST['productId'];
-            $newQuantity = $_POST['quantityUpdate'];
+    $cart = $_SESSION['cart'];
+    $rs = array();
 
-            $cart = $_SESSION['cart'];
-
-            for ($i = 0; $i < count($cart); $i++) {
-                if ($cart[$i]['productId'] == $productId) {
-                    $cart[$i]['quantity'] = $newQuantity;
-                    break;
-                }
-            }
-
-            $_SESSION['cart'] = $cart;
+    foreach ( $cart as $order_detail ) {
+        if ($order_detail['productId'] == $product_id) {
+            $order_detail['quantity'] += $increment;
+            if( $order_detail['quantity'] < 1 )
+                $order_detail['quantity'] = 1;
         }
+        array_push($rs, $order_detail);
     }
+
+    $_SESSION['cart'] = $rs;
 }
 
 function total_cart()
@@ -106,3 +102,4 @@ function string_random($len = 10){
     }
     return $key;
 }
+

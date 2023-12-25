@@ -11,11 +11,23 @@
                             <div class="img w-20 h-20"><img src="public/img/Products/<?php echo $item['productImage']; ?>" alt="product"></div>
                             <div class="info text-[#253d4e]">
                                 <div class="product-name font-semibold"><?php echo $item['productName'] ?></div>
-                                <div class="price mt-3">$<?php echo $item['productPrice'] ?></div>
+                                <div class="price mt-3">$<?php echo $item['productPrice']; ?></div>
                                 <div class="flex items-center mt-3 gap-x-3">
-                                    <button class="w-6 h-6 border hover:bg-green-500 rounded-full"><i class='bx bx-chevron-left'></i></button>
-                                    <span class="quantity">1</span>
-                                    <button class="w-6 h-6 border hover:bg-green-500 rounded-full"><i class='bx bx-chevron-right'></i></button>
+                                    <form action="index.php" method="post">
+                                        <input type="hidden" name="_method" value="update">
+                                        <input type="hidden" name="value" value="-1">
+                                        <input type="hidden" name="productId" value="<?php echo $item['productId']; ?>">
+                                        <button type="submit" class="w-6 h-6 border hover:bg-[#3bb77e] rounded-full"><i class='bx bx-chevron-left'></i></button>
+                                    </form>
+
+                                    <span class="quantity text-[#3bb77e] font-semibold"><?php echo $item['quantity']; ?></span>
+
+                                    <form action="index.php" method="post">
+                                        <input type="hidden" name="_method" value="update">
+                                        <input type="hidden" name="value" value="1">
+                                        <input type="hidden" name="productId" value="<?php echo $item['productId']; ?>">
+                                        <button type="submit" class="w-6 h-6 border hover:bg-[#3bb77e] rounded-full"><i class='bx bx-chevron-right'></i></button>
+                                    </form>
                                 </div>
                             </div>
 

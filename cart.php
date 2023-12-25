@@ -1,6 +1,7 @@
 <?php
 include_once 'core/db/boot.php';
 
+@session_start();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['_method'])) {
         switch ($_POST['_method']) {
@@ -11,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 create();
                 break;
             case 'update':
-                update();
+                update_to_cart( $_POST['productId'], $_POST['value'] );
                 break;
         }
     }

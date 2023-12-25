@@ -366,7 +366,7 @@
                                             <span class="text-green-500 product-price">$<?php echo $product['price'];?></span>
                                             <span class="text-[#adadad] text-xs">$19.80</span>
                                         </div>
-                                        <form action="cart.php" method="post">
+                                        <form action="index.php" method="post">
                                             <input type="hidden" name="_method" value="create">
                                             <input type="hidden" name="productId" value="<?php echo $product['id']; ?>">
                                             <input type="hidden" name="productName" value="<?php echo $product['name']; ?>">

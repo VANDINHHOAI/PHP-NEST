@@ -68,7 +68,7 @@
                                         </div>
                                     </div>
 
-                                    <form action="shop.php" method="post">
+                                    <form action="categories.php" method="post">
                                         <input type="hidden" name="_method" value="delete">
                                         <input type="hidden" name="productId" value="<?php echo $item['productId']; ?>">
                                         <div class="text-xl text-red-500">
@@ -110,7 +110,7 @@
                                 <i class='bx bx-chevron-right'></i>
                             </a>
                         </li>
-                        <li class="ml-1 hover:text-red-500"><a href="#">Products</a></li>
+                        <li class="ml-1 hover:text-red-500"><a href="#">Categories</a></li>
                     </ul>
                 </div>
             </div>
@@ -194,66 +194,74 @@
                         </div>
 
                         <div class="grid grid-cols-2 md:grid-cols-4 gap-x-5 md:gap-6 mt-5">
-                            <?php if (!empty($searchResults)) { ?>
-                                <?php foreach ($searchResults as $product) { ?>
-                                    <div class="group mt-5 md:mt-0 border rounded-md hover:border-green-500 hover:shadow hover:scale-[1.01]
+                            <?php foreach ($productList as $product) { ?>
+                                <div class="group mt-5 md:mt-0 border rounded-md hover:border-green-500 hover:shadow hover:scale-[1.01]
                                     transition duration-300 ease-in-out cursor-pointer relative">
-                                        <div class="w-full px-6 pt-6">
-                                            <a href="detail.php?id=<?php echo $product['id']; ?>">
-                                                <img src="public/img/Products/<?php echo $product['image']; ?>.jpg" alt="image">
+                                    <div class="w-full px-6 pt-6">
+                                        <a href="detail.php?id=<?php echo $product['id']; ?>">
+                                            <img src="public/img/Products/<?php echo $product['image']; ?>.jpg" alt="image">
+                                        </a>
+                                    </div>
+                                    <div class="px-5 pb-5">
+                                        <span class="text-xs text-[#adadad]">Baking material</span>
+                                        <div class="text-[#253d4e] font-semibold hover:text-green-500">
+                                            <a href="detail.php?id=<?php echo $product['id']; ?>"><?php echo $product['name']; ?></a>
+                                        </div>
+                                        <div class="flex items-center text-[#adadad]">
+                                            <i class='bx bx-star'></i>
+                                            <i class='bx bx-star'></i>
+                                            <i class='bx bx-star'></i>
+                                            <i class='bx bx-star'></i>
+                                            <i class='bx bx-star'></i>
+                                            <span class="ml-2">0</span>
+                                        </div>
+                                        <div>
+                                            <span class="text-[#adadad]">By</span>
+                                            <a href="#" class="text-green-500 hover:text-red-500">
+                                                Country Crock
                                             </a>
                                         </div>
-                                        <div class="px-5 pb-5">
-                                            <span class="text-xs text-[#adadad]">Baking material</span>
-                                            <div class="text-[#253d4e] font-semibold hover:text-green-500">
-                                                <a href="detail.php?id=<?php echo $product['id']; ?>"><?php echo $product['name']; ?></a>
-                                            </div>
-                                            <div class="flex items-center text-[#adadad]">
-                                                <i class='bx bx-star'></i>
-                                                <i class='bx bx-star'></i>
-                                                <i class='bx bx-star'></i>
-                                                <i class='bx bx-star'></i>
-                                                <i class='bx bx-star'></i>
-                                                <span class="ml-2">0</span>
-                                            </div>
+                                        <div class="md:flex justify-between items-center mt-3">
                                             <div>
-                                                <span class="text-[#adadad]">By</span>
-                                                <a href="#" class="text-green-500 hover:text-red-500">
-                                                    Country Crock
-                                                </a>
+                                                <span class="text-green-500">$<?php echo $product['price']; ?></span>
+                                                <span class="text-[#adadad] text-xs">$19.80</span>
                                             </div>
-                                            <div class="md:flex justify-between items-center mt-3">
-                                                <div>
-                                                    <span class="text-green-500">$<?php echo $product['price']; ?></span>
-                                                    <span class="text-[#adadad] text-xs">$19.80</span>
-                                                </div>
 
-                                                <form action="cart.php" method="post">
-                                                    <input type="hidden" name="_method" value="create">
-                                                    <input type="hidden" name="productId" value="<?php echo $product['id']; ?>">
-                                                    <input type="hidden" name="productName" value="<?php echo $product['name']; ?>">
-                                                    <input type="hidden" name="productImage" value="<?php echo $product['image']; ?>.jpg">
-                                                    <input type="hidden" name="productPrice" value="<?php echo $product['price']; ?>">
-                                                    <input type="hidden" name="quantity" value="1">
-                                                    <button class="mt-2 md:mt-0 w-full md:w-auto bg-[#def9ec] text-[#29a56c] font-semibold px-3 py-[6px] rounded
+                                            <form action="cart.php" method="post">
+                                                <input type="hidden" name="_method" value="create">
+                                                <input type="hidden" name="productId" value="<?php echo $product['id']; ?>">
+                                                <input type="hidden" name="productName" value="<?php echo $product['name']; ?>">
+                                                <input type="hidden" name="productImage" value="<?php echo $product['image']; ?>.jpg">
+                                                <input type="hidden" name="productPrice" value="<?php echo $product['price']; ?>">
+                                                <input type="hidden" name="quantity" value="1">
+                                                <button class="mt-2 md:mt-0 w-full md:w-auto bg-[#def9ec] text-[#29a56c] font-semibold px-3 py-[6px] rounded
                                                     hover:bg-green-500 hover:text-white">
-                                                        <i class='bx bx-cart'></i>
-                                                        Add
-                                                    </button>
-                                                </form>
-                                            </div>
-                                            <div class="group-hover:block hidden absolute top-0 right-0">
-                                                <div class="text-2xl text-green-500 border border-green-500 rounded hover:bg-green-500 hover:text-white">
-                                                    <a href="#"><i class='bx bx-heart'></i></a>
-                                                </div>
+                                                    <i class='bx bx-cart'></i>
+                                                    Add
+                                                </button>
+                                            </form>
+                                        </div>
+                                        <div class="group-hover:block hidden absolute top-0 right-0">
+                                            <div class="text-2xl text-green-500 border border-green-500 rounded hover:bg-green-500 hover:text-white">
+                                                <a href="#"><i class='bx bx-heart'></i></a>
                                             </div>
                                         </div>
                                     </div>
-                                <?php } ?>
+                                </div>
                             <?php } ?>
                         </div>
 
                         <div class="w-full text-[#777777] text-center mt-10"><span>No more Products to load</span></div>
+
+                        <div class="row">
+                            <ul class="pagination flex item-center justify-center gap-5">
+                                <?php for($i = 1; $i <= 3; $i++) { ?>
+                                    <?php echo '<li class="page-item py-3 px-5 bg-green-500 text-center text-white">
+                                        <a class="page-link" href="categories.php?page='.$i.'">'.$i.'</a>
+                                    </li>' ?>
+                                <?php } ?>
+                            </ul>
+                        </div>
                     </div>
                     <div class="md:w-1/4 bg-white pt-20 px-0 md:px-[15px] pb-[30px] h-auto">
                         <div class="p-[30px] border rounded-2xl shadow-lg">

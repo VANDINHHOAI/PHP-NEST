@@ -5,7 +5,7 @@ $pdo = get_pdo();
 function get_all_products(){
     global $pdo;
 
-    $sql = "SELECT * FROM PRODUCT";
+    $sql = "SELECT * FROM PRODUCT LIMIT 10";
     $stmt = $pdo->prepare($sql);
     
 
@@ -14,6 +14,41 @@ function get_all_products(){
      
     // Lấy danh sách kết quả
     $result = $stmt->fetchAll();
+     
+    $product_list = array();
+
+    // Lặp kết quả
+    foreach ($result as $row){
+        $product = array(
+            'id' => $row['id'],
+            'image' => $row['image'],
+            'description' => $row['description'],
+            'price' => $row['price'],
+            'name' => $row['name'],
+            'quantity' => $row['quantity'],
+        );
+        array_push($product_list, $product);
+    }
+    
+    return $product_list;
+}
+
+function get_products_by_page($page){
+    global $pdo;
+
+    $perPage = 8;
+    $begin = ($page - 1) * $perPage;
+
+    $sql = "SELECT * FROM PRODUCT LIMIT $begin, $perPage";
+    $stmt = $pdo->prepare($sql);
+    
+
+    $stmt->execute();
+    $stmt->setFetchMode(PDO::FETCH_ASSOC); 
+     
+    // Lấy danh sách kết quả
+    $result = $stmt->fetchAll();
+    
      
     $product_list = array();
 

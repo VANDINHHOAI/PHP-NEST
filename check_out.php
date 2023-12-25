@@ -45,7 +45,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                 create();
                 break;
             case 'update':
-                update();
+                update_to_cart( $_POST['productId'], $_POST['value'] );
                 break;
             }           
     }
