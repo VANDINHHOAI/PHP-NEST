@@ -5,7 +5,7 @@ $pdo = get_pdo();
 function get_all_products(){
     global $pdo;
 
-    $sql = "SELECT * FROM PRODUCT LIMIT 10";
+    $sql = "SELECT * FROM PRODUCT";
     $stmt = $pdo->prepare($sql);
     
 
@@ -36,7 +36,7 @@ function get_all_products(){
 function get_products_by_page($page){
     global $pdo;
 
-    $perPage = 8;
+    $perPage = 10;
     $begin = ($page - 1) * $perPage;
 
     $sql = "SELECT * FROM PRODUCT LIMIT $begin, $perPage";
@@ -158,4 +158,72 @@ function get_search_products($search){
     $result = $stmt->fetchAll();
 
     return $result;
+}
+
+function get_products_by_category($category_id){
+    global $pdo;
+
+    $sql = "SELECT product.id, product.image, product.name, product.description, price, quantity, category_id
+    FROM product
+    JOIN categories ON product.category_id = categorie.id
+    WHERE category_id = :id;";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(':id', $category_id);
+
+    $stmt->execute();
+    $stmt->setFetchMode(PDO::FETCH_ASSOC); 
+     
+    // Lấy danh sách kết quả
+    $result = $stmt->fetchAll();
+     
+    $products_list = array();
+
+    // Lặp kết quả
+    foreach ($result as $row){
+        $products= array(
+            'id' => $row['id'],
+            'image' => $row['image'],
+            'name' => $row['name'],
+            'description' => $row['description'],
+            'price' => $row['price'],
+            'quantity' => $row['quantity'],
+            'category_id' => $row['category_id']
+        );
+        array_push($products_list, $products);
+    }
+    
+    return $products_list;
+}
+function get_products_by_category_and_page($category_id, $page) {
+    global $pdo;
+
+    $perPage = 8;
+    $begin = ($page - 1) * $perPage;
+
+    $sql = "SELECT * FROM product WHERE category_id = :category_id LIMIT $begin, $perPage";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(':category_id', $category_id, PDO::PARAM_INT);
+
+    $stmt->execute();
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+
+    // Lấy danh sách kết quả
+    $result = $stmt->fetchAll();
+
+    $product_list = array();
+
+    // Lặp kết quả
+    foreach ($result as $row) {
+        $product = array(
+            'id' => $row['id'],
+            'image' => $row['image'],
+            'description' => $row['description'],
+            'price' => $row['price'],
+            'name' => $row['name'],
+            'quantity' => $row['quantity'],
+        );
+        array_push($product_list, $product);
+    }
+
+    return $product_list;
 }

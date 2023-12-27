@@ -125,43 +125,13 @@
                             <h2>BILLING DETAILS</h2>
                         </div>
                         <div class="py-2 mb-[30px] border-b">
-                            <label class="block after:content-['*'] after:text-red-500 after:ml-0.5" for="first_name">First name</label>
-                            <input class="w-full mt-5 border-none text-sm outline-none" type="text" name="firstName" id="first_name">
-                        </div>
-
-                        <div class="py-2 mb-[30px] border-b">
-                            <label class="block after:content-['*'] after:text-red-500 after:ml-0.5" for="last_name">Last name</label>
-                            <input class="w-full mt-5 border-none text-sm outline-none" type="text" name="lastName" id="last_name">
-                        </div>
-
-                        <div class="py-2 mb-[30px] border-b">
-                            <label class="block" for="company_name">Company name (optional)</label>
-                            <input class="w-full mt-5 border-none text-sm outline-none" type="text" id="company_name">
-                        </div>
-
-                        <div class="py-2 mb-[30px] border-b">
-                            <label class="block after:content-['*'] after:text-red-500 after:ml-0.5" for="country_region">Country / Region</label>
-                            <input class="w-full mt-5 border-none text-sm outline-none" type="text" id="country_region" placeholder="Vietnam">
+                            <label class="block after:content-['*'] after:text-red-500 after:ml-0.5" for="first_name">Name</label>
+                            <input class="w-full mt-5 border-none text-sm outline-none" type="text" name="name" id="first_name">
                         </div>
 
                         <div class="py-2 mb-[30px] border-b">
                             <label class="block after:content-['*'] after:text-red-500 after:ml-0.5" for="street">Street address</label>
                             <input class="w-full mt-5 border-none text-sm outline-none" type="text" name="address" id="street" placeholder="House number and street name">
-                        </div>
-
-                        <div class="py-2 mb-[30px] border-b">
-                            <label class="block" for="another"></label>
-                            <input class="w-full mt-5 border-none text-sm outline-none" type="text" id="another" placeholder="Apartment. suite, unit, etc.">
-                        </div>
-
-                        <div class="py-2 mb-[30px] border-b">
-                            <label class="block" for="postcode">Postcode / ZIP (optional)</label>
-                            <input class="w-full mt-5 border-none text-sm outline-none" type="text" id="postcode">
-                        </div>
-
-                        <div class="py-2 mb-[30px] border-b">
-                            <label class="block after:content-['*'] after:text-red-500 after:ml-0.5" for="town-city">Town / City</label>
-                            <input class="w-full mt-5 border-none text-sm outline-none" type="text" id="town-city">
                         </div>
 
                         <div class="py-2 mb-[30px] border-b">

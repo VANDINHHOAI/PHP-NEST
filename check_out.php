@@ -2,7 +2,7 @@
 include_once 'core/db/boot.php';
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
-    if (isset($_POST['firstName']) && isset($_POST['email']) && isset($_POST['phone']) &&  isset($_POST['address'])) {
+    if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['phone']) &&  isset($_POST['address'])) {
         $email = $_SESSION['email'];
         $user = get_user_by_email($email);
         if ($user) {

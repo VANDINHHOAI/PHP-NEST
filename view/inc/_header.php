@@ -378,7 +378,7 @@
 
                     <li class="mx-4 flex items-center">
                         <span class="text-[#253d4e] font-semibold hover:text-[#3bb77e] transition duration-200 ease-linear">
-                            <a href="#">Contact</a>
+                            <a href="categories.php">Categories</a>
                         </span>
                     </li>
 

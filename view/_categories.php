@@ -251,18 +251,54 @@
                             <?php } ?>
                         </div>
 
-                        <div class="w-full text-[#777777] text-center mt-10"><span>No more Products to load</span></div>
+                        <div class="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
+                            <div class="flex flex-1 justify-between sm:hidden">
+                                <a href="#" class="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Previous</a>
+                                <a href="#" class="relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Next</a>
+                            </div>
+                            <div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
+                                <div>
+                                    <p class="text-sm text-gray-700">
+                                        Showing
+                                        <span class="font-medium">1</span>
+                                        to
+                                        <span class="font-medium">8</span>
+                                        of
+                                        <span class="font-medium">16</span>
+                                        results
+                                    </p>
+                                </div>
 
-                        <div class="row">
-                            <ul class="pagination flex item-center justify-center gap-5">
-                                <?php for($i = 1; $i <= 3; $i++) { ?>
-                                    <?php echo '<li class="page-item py-3 px-5 bg-green-500 text-center text-white">
-                                        <a class="page-link" href="categories.php?page='.$i.'">'.$i.'</a>
-                                    </li>' ?>
-                                <?php } ?>
-                            </ul>
+                                <div>
+                                    <nav class="isolate inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
+                                        <a href="#" class="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
+                                            <span class="sr-only">Previous</span>
+                                            <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+                                            </svg>
+                                        </a>
+                                        <!-- Current: "z-10 bg-indigo-600 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600", Default: "text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-offset-0" -->
+                                        <?php for ($i = 1; $i <= 3; $i++) { ?>
+                                            <?php echo '<a href="categories.php?page=' . $i . '" aria-current="page" class="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex">' . $i . '</a>' ?>
+                                        <?php } ?>
+
+                                        <?php
+                                        echo '
+                                            <a href="categories.php?page=' . $i + 1 .'" class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
+                                            <span class="sr-only">Next</span>
+                                            <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+                                            </svg>
+                                        </a>
+                                            '
+                                        ?>
+
+                                    </nav>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
                     <div class="md:w-1/4 bg-white pt-20 px-0 md:px-[15px] pb-[30px] h-auto">
                         <div class="p-[30px] border rounded-2xl shadow-lg">
                             <div class="text-2xl pb-5 border-b relative mb-[30px]">
@@ -283,8 +319,13 @@
 
                             <div>
                                 <ul>
-                                    <li class="flex items-center gap-x-2 text-sm mt-4"><input class="w-5 h-5" type="checkbox"><span>Baking material7</span></li>
-                                    <li class="flex items-center gap-x-2 text-sm mt-4"><input class="w-5 h-5" type="checkbox"><span>Bread and Juice5</span></li>
+                                    <?php foreach ($category_list as $category) { ?>
+                                        <li class="flex items-center gap-x-2 text-sm mt-4"><input class="w-5 h-5" type="checkbox"><span><a href="categories.php?category_id=<?php echo $category['id']; ?>"
+                                                        class="text-black hover:text-[#56cfe1]">
+                                                        <?php echo get_category($category['id'])['name']; ?>
+                                                    </a></span></li>
+                                    <?php } ?>
+                                    <!-- <li class="flex items-center gap-x-2 text-sm mt-4"><input class="w-5 h-5" type="checkbox"><span>Bread and Juice5</span></li>
                                     <li class="flex items-center gap-x-2 text-sm mt-4"><input class="w-5 h-5" type="checkbox"><span>Clothing & beauty2</span></li>
                                     <li class="flex items-center gap-x-2 text-sm mt-4"><input class="w-5 h-5" type="checkbox"><span>Deals Of The Day4</span></li>
                                     <li class="flex items-center gap-x-2 text-sm mt-4"><input class="w-5 h-5" type="checkbox"><span>Fresh Fruit8</span></li>
@@ -292,7 +333,7 @@
                                     <li class="flex items-center gap-x-2 text-sm mt-4"><input class="w-5 h-5" type="checkbox"><span>Milks and Dairies3</span></li>
                                     <li class="flex items-center gap-x-2 text-sm mt-4"><input class="w-5 h-5" type="checkbox"><span>Vegetables9</span></li>
                                     <li class="flex items-center gap-x-2 text-sm mt-4"><input class="w-5 h-5" type="checkbox"><span>Wines & Drinks1</span></li>
-                                    <li class="flex items-center gap-x-2 text-sm mt-4"><input class="w-5 h-5" type="checkbox"><span>Uncategorized9</span></li>
+                                    <li class="flex items-center gap-x-2 text-sm mt-4"><input class="w-5 h-5" type="checkbox"><span>Uncategorized9</span></li> -->
                                 </ul>
                             </div>
                             <button class="px-4 py-2 bg-[#3bb77e] mt-4 text-white font-semibold rounded hover:bg-yellow-500 hover:text-black

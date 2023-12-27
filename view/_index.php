@@ -339,7 +339,7 @@
                             transition duration-300 ease-in-out cursor-pointer relative">
                                 <a href="detail.php?id=<?php echo $product['id']; ?>">
                                     <div class="btn-more w-full px-6 pt-6">
-                                        <img class="product-img" src="public/img/Products/<?php echo $product['image'] . ".jpg"?>" alt="">
+                                        <img class="product-img" src="public/img/Products/<?php echo $product['image'] . ".jpg" ?>" alt="">
                                     </div>
                                 </a>
                                 <div class="px-5 pb-5">
@@ -363,7 +363,7 @@
                                     </div>
                                     <div class="md:flex justify-between items-center mt-3">
                                         <div>
-                                            <span class="text-green-500 product-price">$<?php echo $product['price'];?></span>
+                                            <span class="text-green-500 product-price">$<?php echo $product['price']; ?></span>
                                             <span class="text-[#adadad] text-xs">$19.80</span>
                                         </div>
                                         <form action="index.php" method="post">
@@ -389,6 +389,45 @@
                                 </div>
                             </div>
                         <?php } ?>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-center border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
+                <div class="flex flex-1 justify-between sm:hidden">
+                    <a href="#" class="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Previous</a>
+                    <a href="#" class="relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Next</a>
+                </div>
+                <div class="hidden sm:flex sm:items-center sm:justify-center">
+                    <div>
+                        <nav class="isolate inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
+                            <?php
+                            echo '
+                                <a href="index.php?page=' . 1 . '" class="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
+                                <span class="sr-only">Previous</span>
+                                <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                                ';
+                            ?>
+
+                            <!-- Current: "z-10 bg-indigo-600 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600", Default: "text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-offset-0" -->
+                            <?php for ($i = 1; $i <= 2; $i++) { ?>
+                                <?php echo '<a href="index.php?page=' . $i . '" aria-current="page" class="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex">' . $i . '</a>' ?>
+                            <?php } ?>
+
+                            <?php
+                            echo '
+                                            <a href="index.php?page=' . 2 . '" class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
+                                            <span class="sr-only">Next</span>
+                                            <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+                                            </svg>
+                                        </a>
+                                            '
+                            ?>
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -446,9 +485,9 @@
                         <?php for ($i = 0; $i < 4; $i++) { ?>
                             <div class="group mt-5 md:mt-0 border rounded-md hover:border-green-500 hover:shadow hover:scale-[1.01]
                         transition duration-300 ease-in-out cursor-pointer relative">
-                                <a href="detail.php?imageProduct=<?php echo $productList[$i]['image'];?> &nameProduct=<?php echo $productList[$i]['name']; ?>  &priceProduct=<?php echo $productList[$i]['price']; ?>">
+                                <a href="detail.php?imageProduct=<?php echo $productList[$i]['image']; ?> &nameProduct=<?php echo $productList[$i]['name']; ?>  &priceProduct=<?php echo $productList[$i]['price']; ?>">
                                     <div class="w-full px-6 pt-6">
-                                        <img src="public/img/Products/<?php echo $productList[$i]['image']?>.jpg" alt="">
+                                        <img src="public/img/Products/<?php echo $productList[$i]['image'] ?>.jpg" alt="">
                                     </div>
                                 </a>
                                 <div class="px-5 pb-5">
@@ -1113,7 +1152,7 @@
             </div>
         </div>
     </div>
-    
+
     <script src="public/js/swiper-bundle.min.js"></script>
     <script src="public/js/main.js"></script>
 </body>

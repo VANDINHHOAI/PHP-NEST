@@ -20,7 +20,16 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 }
 
 if($_SERVER['REQUEST_METHOD'] === 'GET'){
-    $productList = get_all_products();
+    $page;
+    if(isset($_GET['page'])) {
+        $page = $_GET['page'];
+    } elseif (isset($_GET['page']) && $_GET['page'] < '1') {
+        $page = 1;
+    } else {
+        $page = 1;
+    }
+    $productList = get_products_by_page($page);
+    
     include_once './view/_index.php'; 
     if(isset($_SESSION['cart'])){
         $cart = $_SESSION['cart'];
